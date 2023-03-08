@@ -179,10 +179,10 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_filter_domain_model_categoryenterprise',
-                'MM' => 'tx_filter_enterprise_categoryenterprise_mm',
+                'default' => 0,
                 'size' => 10,
                 'autoSizeMax' => 30,
-                'maxitems' => 9999,
+                'maxitems' => 1,
                 'multiple' => 0,
                 'fieldControl' => [
                     'editPopup' => [
@@ -196,7 +196,7 @@ return [
                     ],
                 ],
             ],
-            
+
         ],
     
     ],

@@ -130,7 +130,7 @@
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
                             "relationName": "category",
-                            "relationType": "manyToMany",
+                            "relationType": "zeroToOne",
                             "relationWire": "[wired]",
                             "renderType": "selectMultipleSideBySide",
                             "uid": "421833916943"
@@ -260,7 +260,7 @@
     ],
     "storagePath": "C:\/laragon\/www\/formation-typo3-main\/extensions\/",
     "log": {
-        "last_modified": "2023-03-08 10:44",
+        "last_modified": "2023-03-08 02:30",
         "extension_builder_version": "10.0.3",
         "be_user": " (1)"
     }

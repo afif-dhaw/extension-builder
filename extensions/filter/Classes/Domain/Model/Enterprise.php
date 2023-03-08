@@ -72,7 +72,7 @@ class Enterprise extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * category
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Filter\Filter\Domain\Model\CategoryEnterprise>
+     * @var \Filter\Filter\Domain\Model\CategoryEnterprise
      */
     protected $category = null;
 
@@ -96,7 +96,6 @@ class Enterprise extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     public function initializeObject()
     {
-        $this->category = $this->category ?: new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -247,31 +246,9 @@ class Enterprise extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Adds a CategoryEnterprise
-     *
-     * @param \Filter\Filter\Domain\Model\CategoryEnterprise $category
-     * @return void
-     */
-    public function addCategory(\Filter\Filter\Domain\Model\CategoryEnterprise $category)
-    {
-        $this->category->attach($category);
-    }
-
-    /**
-     * Removes a CategoryEnterprise
-     *
-     * @param \Filter\Filter\Domain\Model\CategoryEnterprise $categoryToRemove The CategoryEnterprise to be removed
-     * @return void
-     */
-    public function removeCategory(\Filter\Filter\Domain\Model\CategoryEnterprise $categoryToRemove)
-    {
-        $this->category->detach($categoryToRemove);
-    }
-
-    /**
      * Returns the category
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Filter\Filter\Domain\Model\CategoryEnterprise> $category
+     * @return \Filter\Filter\Domain\Model\CategoryEnterprise $category
      */
     public function getCategory()
     {
@@ -281,10 +258,10 @@ class Enterprise extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the category
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Filter\Filter\Domain\Model\CategoryEnterprise> $category
+     * @param \Filter\Filter\Domain\Model\CategoryEnterprise $category
      * @return void
      */
-    public function setCategory(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $category)
+    public function setCategory(\Filter\Filter\Domain\Model\CategoryEnterprise $category)
     {
         $this->category = $category;
     }

@@ -3,6 +3,7 @@ plugin.tx_formation {
         a = hello
         uids {
             footerNav = 9
+            typeNumVal = 41028104120
         }
     }
     view {

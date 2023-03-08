@@ -187,9 +187,8 @@ class EnterpriseTest extends UnitTestCase
      */
     public function getCategoryReturnsInitialValueForCategoryEnterprise(): void
     {
-        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         self::assertEquals(
-            $newObjectStorage,
+            null,
             $this->subject->getCategory()
         );
     }
@@ -197,47 +196,11 @@ class EnterpriseTest extends UnitTestCase
     /**
      * @test
      */
-    public function setCategoryForObjectStorageContainingCategoryEnterpriseSetsCategory(): void
+    public function setCategoryForCategoryEnterpriseSetsCategory(): void
     {
-        $category = new \Filter\Filter\Domain\Model\CategoryEnterprise();
-        $objectStorageHoldingExactlyOneCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $objectStorageHoldingExactlyOneCategory->attach($category);
-        $this->subject->setCategory($objectStorageHoldingExactlyOneCategory);
+        $categoryFixture = new \Filter\Filter\Domain\Model\CategoryEnterprise();
+        $this->subject->setCategory($categoryFixture);
 
-        self::assertEquals($objectStorageHoldingExactlyOneCategory, $this->subject->_get('category'));
-    }
-
-    /**
-     * @test
-     */
-    public function addCategoryToObjectStorageHoldingCategory(): void
-    {
-        $category = new \Filter\Filter\Domain\Model\CategoryEnterprise();
-        $categoryObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
-            ->onlyMethods(['attach'])
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $categoryObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($category));
-        $this->subject->_set('category', $categoryObjectStorageMock);
-
-        $this->subject->addCategory($category);
-    }
-
-    /**
-     * @test
-     */
-    public function removeCategoryFromObjectStorageHoldingCategory(): void
-    {
-        $category = new \Filter\Filter\Domain\Model\CategoryEnterprise();
-        $categoryObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
-            ->onlyMethods(['detach'])
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $categoryObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($category));
-        $this->subject->_set('category', $categoryObjectStorageMock);
-
-        $this->subject->removeCategory($category);
+        self::assertEquals($categoryFixture, $this->subject->_get('category'));
     }
 }

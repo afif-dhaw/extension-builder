@@ -10,6 +10,7 @@ use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+
 /**
  * This file is part of the "filter" Extension for TYPO3 CMS.
  *
@@ -24,17 +25,13 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
  */
 class EnterpriseRepository extends Repository
 {
-
     protected $connectionPool = null;
-
     protected $enterpriseName = 'tx_filter_domain_model_enterprise';
-
 
     // public function __construct(ConnectionPool $connectionPool)
     // {
     //     $this->connectionPool = $connectionPool;
     // }
-
     public function initializeObject()
     {
         $querySettings = GeneralUtility::makeInstance(Typo3QuerySettings::class);
@@ -42,29 +39,27 @@ class EnterpriseRepository extends Repository
         $this->setDefaultQuerySettings($querySettings);
     }
 
-
-
-    public function getByQueryAndCategories(string $query = "" , array $categories = [])
+    /**
+     * @param string $query
+     * @param array $categories
+     */
+    public function getByQueryAndCategories(string $query = "", array $categories = [])
     {
         $this->connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
-
         $queryBuilder = $this->connectionPool->getQueryBuilderForTable($this->enterpriseName);
         $queryBuilder = $queryBuilder->select('*')->from($this->enterpriseName);
-        $queryBuilder = $queryBuilder->where(
 
-            $queryBuilder->expr()->in('category', [1])
-
-            // $queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%rprise%'))
-        );
-        // $queryBuilder->orWhere(
-        //     // $queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%rprise%'))
-        //     $queryBuilder->expr()->in('category', [3,5])
-        // );
-    
-
-
-        $queryResult =  $queryBuilder->execute();
+        if($categories){
+            $queryBuilder->andWhere(
+                $queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%'.$query.'%')),
+                $queryBuilder->expr()->in('category', $categories)
+            );
+        }else{
+            $queryBuilder = $queryBuilder->where($queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%'.$query.'%')));
+        }
+        $queryResult = $queryBuilder->execute();
         $results = $queryResult->fetchAll();
-        debug($results);die;
+        
+        return $results;
     }
 }

@@ -3,8 +3,10 @@
 declare(strict_types=1);
 
 namespace Filter\Filter\Controller;
-use \Filter\Filter\Domain\Repository\EnterpriseRepository;
-use \Filter\Filter\Domain\Repository\CategoryEnterpriseRepository;
+
+use Filter\Filter\Domain\Repository\EnterpriseRepository;
+use Filter\Filter\Domain\Repository\CategoryEnterpriseRepository;
+
 /**
  * This file is part of the "filter" Extension for TYPO3 CMS.
  *
@@ -19,23 +21,26 @@ use \Filter\Filter\Domain\Repository\CategoryEnterpriseRepository;
  */
 class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-    
     protected $enterpriseRepository = null;
     protected $categoryRepository = null;
 
-    public function __construct(EnterpriseRepository $enterpriseRepository , CategoryEnterpriseRepository $categoryRepository)
+    /**
+     * @param EnterpriseRepository $enterpriseRepository
+     * @param CategoryEnterpriseRepository $categoryRepository
+     */
+    public function __construct(EnterpriseRepository $enterpriseRepository, CategoryEnterpriseRepository $categoryRepository)
     {
         $this->enterpriseRepository = $enterpriseRepository;
         $this->categoryRepository = $categoryRepository;
     }
-    
+
     /**
      * action list
      *
      * @return string|object|null|void
      */
     public function listAction()
-    { 
+    {
         $enterprises = $this->enterpriseRepository->findAll();
         $categories = $this->categoryRepository->findAll();
         $this->view->assign('enterprises', $enterprises);
@@ -120,11 +125,14 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function filterAction()
     {
-       $query = $this->request->getArgument('query');
-       $categories = $this->request->getArgument('categories');
-       $this->enterpriseRepository->getByQueryAndCategories($query,$categories);
-       debug($categories);
-       debug($query);
-    //    die;
+        $query = $this->request->getArgument('query');
+        $categories = $this->request->getArgument('categories');
+
+        $categories = is_array($categories) ? $categories : [];
+        
+        $enterprise = $this->enterpriseRepository->getByQueryAndCategories($query, $categories);
+        $this->view->assign('enterprises', $enterprise);
+        $this->view->assign('selectedCategories', $categories);
+        $this->view->assign('categories' , $this->categoryRepository->findAll());
     }
 }
