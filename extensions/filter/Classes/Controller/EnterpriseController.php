@@ -35,11 +35,11 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      * @return string|object|null|void
      */
     public function listAction()
-    {
+    { 
         $enterprises = $this->enterpriseRepository->findAll();
-        $category = $this->categoryRepository->findAll();
+        $categories = $this->categoryRepository->findAll();
         $this->view->assign('enterprises', $enterprises);
-        $this->view->assign('category', $category);
+        $this->view->assign('categories', $categories);
     }
 
     /**
@@ -122,7 +122,7 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     {
        $query = $this->request->getArgument('query');
        $categories = $this->request->getArgument('categories');
-    //    $this->enterpriseRepository->update($enterprise);
+       $this->enterpriseRepository->getByQueryAndCategories($query,$categories);
        debug($categories);
        debug($query);
     //    die;

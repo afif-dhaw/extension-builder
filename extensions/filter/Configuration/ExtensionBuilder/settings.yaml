@@ -54,11 +54,11 @@ overwriteSettings:
       #Language: merge
       #Layouts: keep
       #Partials: keep
-      #Templates: keep
+      Templates: keep
       Backend:
         #Layouts: keep
         #Partials: keep
-        #Templates: keep
+        Templates: keep
 
   user_extension.svg: keep
 #  ext_localconf.php: merge

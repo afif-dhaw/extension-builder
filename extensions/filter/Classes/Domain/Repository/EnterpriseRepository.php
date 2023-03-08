@@ -28,10 +28,12 @@ class EnterpriseRepository extends Repository
     protected $connectionPool = null;
 
     protected $enterpriseName = 'tx_filter_domain_model_enterprise';
-    public function __construct(ConnectionPool $connectionPool)
-    {
-        $this->connectionPool = $connectionPool;
-    }
+
+
+    // public function __construct(ConnectionPool $connectionPool)
+    // {
+    //     $this->connectionPool = $connectionPool;
+    // }
 
     public function initializeObject()
     {
@@ -44,10 +46,25 @@ class EnterpriseRepository extends Repository
 
     public function getByQueryAndCategories(string $query = "" , array $categories = [])
     {
-        $queryBuilder = $this->connectionPool
-            ->getQueryBuilderForTable($this->enterpriseName);
+        $this->connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
+
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable($this->enterpriseName);
+        $queryBuilder = $queryBuilder->select('*')->from($this->enterpriseName);
+        $queryBuilder = $queryBuilder->where(
+
+            $queryBuilder->expr()->in('category', [1])
+
+            // $queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%rprise%'))
+        );
+        // $queryBuilder->orWhere(
+        //     // $queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%rprise%'))
+        //     $queryBuilder->expr()->in('category', [3,5])
+        // );
+    
 
 
-        debug($queryBuilder);die;
+        $queryResult =  $queryBuilder->execute();
+        $results = $queryResult->fetchAll();
+        debug($results);die;
     }
 }
