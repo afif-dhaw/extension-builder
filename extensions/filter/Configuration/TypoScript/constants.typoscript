@@ -26,3 +26,17 @@ plugin.tx_filter_filter {
         storagePid =
     }
 }
+plugin.tx_filter_listajax {
+    view {
+        # cat=plugin.tx_filter_listajax/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:filter/Resources/Private/Templates/
+        # cat=plugin.tx_filter_listajax/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:filter/Resources/Private/Partials/
+        # cat=plugin.tx_filter_listajax/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:filter/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_filter_listajax//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

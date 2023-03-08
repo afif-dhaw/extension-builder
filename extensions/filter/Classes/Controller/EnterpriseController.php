@@ -142,4 +142,21 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     public function filterajaxAction()
     {
     }
+
+    /**
+     * @param \Filter\Filter\Domain\Repository\EnterpriseRepository $enterpriseRepository
+     */
+    public function injectEnterpriseRepository(\Filter\Filter\Domain\Repository\EnterpriseRepository $enterpriseRepository)
+    {
+        $this->enterpriseRepository = $enterpriseRepository;
+    }
+
+    /**
+     * action listajax
+     *
+     * @return string|object|null|void
+     */
+    public function listajaxAction()
+    {
+    }
 }

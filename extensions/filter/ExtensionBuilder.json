@@ -18,7 +18,8 @@
                     "_default5_delete": true,
                     "customActions": [
                         "filter",
-                        "filterajax"
+                        "filterajax",
+                        "listajax"
                     ]
                 },
                 "name": "Enterprise",
@@ -150,12 +151,12 @@
             "name": "New Model Object",
             "value": {
                 "actionGroup": {
-                    "_default0_index": true,
-                    "_default1_list": true,
-                    "_default2_show": true,
-                    "_default3_new_create": true,
-                    "_default4_edit_update": true,
-                    "_default5_delete": true,
+                    "_default0_index": false,
+                    "_default1_list": false,
+                    "_default2_show": false,
+                    "_default3_new_create": false,
+                    "_default4_edit_update": false,
+                    "_default5_delete": false,
                     "customActions": []
                 },
                 "name": "CategoryEnterprise",
@@ -241,6 +242,15 @@
                 "description": "",
                 "key": "filter",
                 "name": "filter"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Enterprise=>listajax",
+                    "noncacheableActions": "Enterprise=>listajax"
+                },
+                "description": "",
+                "key": "listajax",
+                "name": "listajax"
             }
         ],
         "vendorName": "Filter"
@@ -261,7 +271,7 @@
     ],
     "storagePath": "C:\/laragon\/www\/formation-typo3-main\/extensions\/",
     "log": {
-        "last_modified": "2023-03-08 03:00",
+        "last_modified": "2023-03-08 03:14",
         "extension_builder_version": "10.0.3",
         "be_user": " (1)"
     }

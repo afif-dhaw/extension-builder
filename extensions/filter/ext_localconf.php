@@ -26,6 +26,18 @@ defined('TYPO3_MODE') || die();
         ]
     );
 
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'Filter',
+        'Listajax',
+        [
+            \Filter\Filter\Controller\EnterpriseController::class => 'listajax'
+        ],
+        // non-cacheable actions
+        [
+            \Filter\Filter\Controller\EnterpriseController::class => 'listajax'
+        ]
+    );
+
     // wizards
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
         'mod {
@@ -49,6 +61,15 @@ defined('TYPO3_MODE') || die();
                             list_type = filter_filter
                         }
                     }
+                    listajax {
+                        iconIdentifier = filter-plugin-listajax
+                        title = LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_listajax.name
+                        description = LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_listajax.description
+                        tt_content_defValues {
+                            CType = list
+                            list_type = filter_listajax
+                        }
+                    }
                 }
                 show = *
             }
@@ -65,5 +86,10 @@ defined('TYPO3_MODE') || die();
         'filter-plugin-filter',
         \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         ['source' => 'EXT:filter/Resources/Public/Icons/user_plugin_filter.svg']
+    );
+    $iconRegistry->registerIcon(
+        'filter-plugin-listajax',
+        \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        ['source' => 'EXT:filter/Resources/Public/Icons/user_plugin_listajax.svg']
     );
 })();
