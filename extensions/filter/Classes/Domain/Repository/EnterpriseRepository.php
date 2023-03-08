@@ -48,18 +48,16 @@ class EnterpriseRepository extends Repository
         $this->connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
         $queryBuilder = $this->connectionPool->getQueryBuilderForTable($this->enterpriseName);
         $queryBuilder = $queryBuilder->select('*')->from($this->enterpriseName);
-
-        if($categories){
+        if ($categories) {
             $queryBuilder->andWhere(
-                $queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%'.$query.'%')),
-                $queryBuilder->expr()->in('category', $categories)
+            $queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%' . $query . '%')), 
+            $queryBuilder->expr()->in('category', $categories)
             );
-        }else{
-            $queryBuilder = $queryBuilder->where($queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%'.$query.'%')));
+        } else {
+            $queryBuilder = $queryBuilder->where($queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%' . $query . '%')));
         }
         $queryResult = $queryBuilder->execute();
         $results = $queryResult->fetchAll();
-        
         return $results;
     }
 }

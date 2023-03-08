@@ -18,11 +18,11 @@ defined('TYPO3_MODE') || die();
         'Filter',
         'Filter',
         [
-            \Filter\Filter\Controller\EnterpriseController::class => 'filter'
+            \Filter\Filter\Controller\EnterpriseController::class => 'filter, filterajax'
         ],
         // non-cacheable actions
         [
-            \Filter\Filter\Controller\EnterpriseController::class => 'filter'
+            \Filter\Filter\Controller\EnterpriseController::class => 'filter, filterajax'
         ]
     );
 

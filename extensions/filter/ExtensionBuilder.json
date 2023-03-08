@@ -3,8 +3,8 @@
         {
             "config": {
                 "position": [
-                    659,
-                    109
+                    560,
+                    56
                 ]
             },
             "name": "New Model Object",
@@ -17,7 +17,8 @@
                     "_default4_edit_update": true,
                     "_default5_delete": true,
                     "customActions": [
-                        "filter"
+                        "filter",
+                        "filterajax"
                     ]
                 },
                 "name": "Enterprise",
@@ -142,8 +143,8 @@
         {
             "config": {
                 "position": [
-                    390,
-                    409
+                    318,
+                    62
                 ]
             },
             "name": "New Model Object",
@@ -234,8 +235,8 @@
             },
             {
                 "actions": {
-                    "controllerActionCombinations": "Enterprise=>filter",
-                    "noncacheableActions": "Enterprise=>filter"
+                    "controllerActionCombinations": "Enterprise=>filter,filterajax",
+                    "noncacheableActions": "Enterprise=>filter,filterajax"
                 },
                 "description": "",
                 "key": "filter",
@@ -260,7 +261,7 @@
     ],
     "storagePath": "C:\/laragon\/www\/formation-typo3-main\/extensions\/",
     "log": {
-        "last_modified": "2023-03-08 02:30",
+        "last_modified": "2023-03-08 03:00",
         "extension_builder_version": "10.0.3",
         "be_user": " (1)"
     }

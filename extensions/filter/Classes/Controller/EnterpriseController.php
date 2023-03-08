@@ -127,12 +127,19 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     {
         $query = $this->request->getArgument('query');
         $categories = $this->request->getArgument('categories');
-
         $categories = is_array($categories) ? $categories : [];
-        
         $enterprise = $this->enterpriseRepository->getByQueryAndCategories($query, $categories);
         $this->view->assign('enterprises', $enterprise);
         $this->view->assign('selectedCategories', $categories);
-        $this->view->assign('categories' , $this->categoryRepository->findAll());
+        $this->view->assign('categories', $this->categoryRepository->findAll());
+    }
+
+    /**
+     * action filterajax
+     *
+     * @return string|object|null|void
+     */
+    public function filterajaxAction()
+    {
     }
 }
