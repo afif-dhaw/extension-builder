@@ -158,5 +158,6 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function listajaxAction()
     {
-    }
+        
+        }
 }

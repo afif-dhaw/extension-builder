@@ -42,6 +42,14 @@ plugin.tx_filter_filter {
         #callDefaultActionIfActionCantBeResolved = 1
     }
 }
+
+plugin.tx_filter{
+    settings{
+        uids{
+           typeNumVal = {$plugin.tx_formation.settings.uids.typeNumVal} 
+        }
+    }
+}
 plugin.tx_filter_listajax {
     view {
         templateRootPaths.0 = EXT:filter/Resources/Private/Templates/
@@ -98,3 +106,33 @@ plugin.tx_filter._CSS_DEFAULT_STYLE (
         color:green;
     }
 )
+
+
+
+
+AJAXPage = PAGE
+AJAXPage {
+    typeNum = {$plugin.tx_formation.settings.uids.typeNumVal}
+    10 = USER
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = Filter
+        pluginName = Filterajax
+    }
+
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders {
+            10 {
+                header = Content-Type: application/json
+                replace = 1
+            }
+        }
+        xhtml_cleaning = 0
+        debug = 0
+        no_cache = 1
+        admPanel = 0
+    }
+
+}
+
