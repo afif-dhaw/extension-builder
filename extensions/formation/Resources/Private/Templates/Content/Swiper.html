@@ -1,0 +1,59 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:project="EW72\Project\ViewHelpers">
+<f:layout name="Default" />
+
+<f:section name="Configuration">
+    <flux:form id="swiper" label="Swiper" description="Swiper">
+        <!-- First Tab Sheet -->
+        <flux:form.sheet name="allgemein" label="Allgemein">
+            <flux:field.input name="header" label="Überschrift (h2)" />
+            <flux:field.input name="button" label="Button-Text" />
+            <flux:field.input name="link" label="Button-Link" config="{renderType: 'inputLink'}"></flux:field.input>
+            <flux:field.checkbox name="standard" label="Auch für Wiederkehrer und eingeloggte Nutzer anzeigen" />
+        </flux:form.sheet>
+        <!-- Second Tab Sheet -->
+        <flux:form.sheet name="media" label="Media">
+            <flux:field.inline.fal name="image" label="Bild (min. 3200x1400px, Empfehlung: Originalgröβe)" required="1"
+                minItems="1" maxItems="3" allowedExtensions="jpg, jpeg, png, svg" showThumbs="true" cropVariants="{
+                    desktop: {title: 'Desktop', allowedAspectRatios: {default: {title: '16:7', value: '2.3333333'}}}, 
+                tablet: {title: 'Tablette', allowedAspectRatios: {default: {title: '16:7', value: '2.3333333'}}}, 
+                smartphone: {title: 'SmartPhone', allowedAspectRatios: {default: {title: '375:578', value: '1'}}}}" />
+        </flux:form.sheet>
+    </flux:form>
+</f:section>
+<f:section name="Preview">
+    <h1>Swiper CE</h1>
+</f:section>
+<f:section name="Main">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <f:for each="{v:content.resources.fal(field: 'image')}" as="image">
+                <div class="swiper-slide">
+                    
+                    <picture>
+                        <source srcset="<f:uri.image treatIdAsReference=" 1" src="{image.id}" crop="{image.crop}"
+                            cropVariant="desktop" maxWidth="1140" />" media="(min-width: 48em)" />
+                        <source srcset="<f:uri.image treatIdAsReference=" 1" src="{image.id}" crop="{image.crop}"
+                            cropVariant="tablet" maxWidth="768" />" media="(min-width: 33.75em)" />
+                        <source srcset="<f:uri.image treatIdAsReference=" 1" src="{image.id}" crop="{image.crop}"
+                            cropVariant="mobile" maxWidth="540" />" />
+                        <img alt="{image.alternative}" title="{image.title}" src="<f:uri.image treatIdAsReference=" 1"
+                            src="{image.id}" crop="{image.crop}" cropVariant="desktop" maxWidth="1140" />"
+                        />
+                    </picture>
+                </div>
+                <div class="floating-banner">
+                    <h1 class="floating-banner-header">{header}</h1>
+                    <input class="floating-banner-button" type="button" value="{button}">
+                </div>
+            </f:for>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</f:section>
+
+
+</html>

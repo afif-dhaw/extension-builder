@@ -1,0 +1,34 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+
+<f:layout name="Page" />
+
+<f:section name="Configuration">
+    <flux:form id="home" label="Startseite"> </flux:form>
+
+    <flux:grid>
+        <flux:grid.row>
+            <flux:grid.column colPos="2" colspan="4" name="stage" label="Stage"> </flux:grid.column>
+        </flux:grid.row>
+
+        <flux:grid.row>
+            <flux:grid.column colPos="0" colspan="4" name="content" label="Hauptbereich"> </flux:grid.column>
+        </flux:grid.row>
+    </flux:grid>
+</f:section>
+
+<f:section name="Preview"> </f:section>
+
+<f:section name="Main">
+    <main class="lay-main">
+        <div id="content" class="l-content">
+            <f:comment>
+                <f:debug>{settings}</f:debug>
+            </f:comment>
+            <v:content.render column="0" />
+        </div>
+    </main>
+</f:section>
+
+</html>

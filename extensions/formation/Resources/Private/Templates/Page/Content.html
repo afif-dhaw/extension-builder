@@ -1,0 +1,53 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+<f:layout name="Page" />
+
+<f:section name="Configuration">
+    <flux:form id="content" label="ContentPage"> </flux:form>
+    <flux:grid>
+        <flux:grid.row>
+            <flux:grid.column colPos="2" colspan="5" name="header" label="header"> </flux:grid.column>
+        </flux:grid.row>
+        <flux:grid.row>
+            <flux:grid.column colPos="4" colspan="1" name="leftSide" label="leftSide"> </flux:grid.column>
+            <flux:grid.column colPos="0" colspan="3" name="container" label="container"></flux:grid.column>
+            <flux:grid.column colPos="5" colspan="1" name="rightSide" label="rightSide"></flux:grid.column>
+        </flux:grid.row>
+        <flux:grid.row>
+            <flux:grid.column colPos="7" colspan="5" name="footer" label="footer"> </flux:grid.column>
+        </flux:grid.row>
+    </flux:grid>
+</f:section>
+
+<f:section name="Preview">
+</f:section>
+
+<f:section name="Main">
+    <div class="lay-content">
+        <header>
+            <v:content.render column="2" />
+        </header>
+        <main class="l-main">
+            <div class="m-leftbar">
+                <v:content.render column="4" />
+            </div>
+            <div class="m-container">
+                <v:content.render column="0" />
+            </div>
+            <div class="m-rightbar">
+                <v:content.render column="5" />
+            </div>
+        </main>
+        <footer>
+            <v:content.render column="7" />
+        </footer>
+    </div>
+    <main class="lay-main">
+        <div id="content" class="l-content">
+            <f:debug>{_setting}</f:debug>
+            <v:content.render column="0" />
+    </main>
+</f:section>
+
+</html>

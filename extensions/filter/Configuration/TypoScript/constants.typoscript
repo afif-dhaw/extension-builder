@@ -1,0 +1,28 @@
+plugin.tx_filter_enterprise {
+    view {
+        # cat=plugin.tx_filter_enterprise/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:filter/Resources/Private/Templates/
+        # cat=plugin.tx_filter_enterprise/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:filter/Resources/Private/Partials/
+        # cat=plugin.tx_filter_enterprise/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:filter/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_filter_enterprise//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}
+plugin.tx_filter_filter {
+    view {
+        # cat=plugin.tx_filter_filter/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:filter/Resources/Private/Templates/
+        # cat=plugin.tx_filter_filter/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:filter/Resources/Private/Partials/
+        # cat=plugin.tx_filter_filter/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:filter/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_filter_filter//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

@@ -1,0 +1,37 @@
+section.download {
+    background-color: $background-color-download-page;
+
+    >.download-header {
+        color: $color-download-header;
+        text-transform: uppercase;
+    }
+
+    >.download-buttons {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+
+        >.download-button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 16px;
+            border: solid 1px #db6165;
+            border-radius: 4px;
+
+            &.hide-border {
+                border: none;
+            }
+
+            >a {
+                color: $color-link-download-button;
+                text-decoration: none;
+            }
+
+            >.download-icon {
+                height: 20px;
+            }
+        }
+    }
+}

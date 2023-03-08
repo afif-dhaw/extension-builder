@@ -1,0 +1,110 @@
+# these classes are only used in auto-generated templates
+plugin.tx_formation._CSS_DEFAULT_STYLE (
+    textarea.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+
+    input.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+
+    .tx-project table {
+        border-collapse:separate;
+        border-spacing:10px;
+    }
+
+    .tx-project table th {
+        font-weight:bold;
+    }
+
+    .tx-project table td {
+        vertical-align:top;
+    }
+
+    .typo3-messages .message-error {
+        color:red;
+    }
+
+    .typo3-messages .message-ok {
+        color:green;
+    }
+)
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+# remove default styling
+plugin.tx_formation._CSS_DEFAULT_STYLE >
+
+# disable default wrappers
+lib.contentElement.layoutRootPaths.100 = EXT:project/Resources/Private/Layouts/Fluid/
+
+config {
+    # disable <body> tag generation (it must then be provided in a Layout.html or Page.html)
+    disableBodyTag = 1
+    // Enable TYPO3 Indexing
+    index_enable = 1
+    index_externals = 1
+    index_metatags = 1
+}
+
+page = PAGE
+page {
+    # <body> tag
+    # bodyTagAdd = class="no-js no-transition" data-js-init
+
+    # CSS
+    includeCSS.main = /assets/css/styles.min.css
+
+    # JS
+    includeJSFooter.main = /assets/js/scripts.min.js
+# META Tags
+    meta {
+        #og:title {
+        #    data = page:title
+        #    ifEmpty.data = levelfield :-1, page:title, slide
+        #    attribute = property
+        #}
+
+        #og:description {
+        #    data = page:description
+        #    ifEmpty.data = levelfield :-1, description, slide
+        #    attribute = property
+        #}
+
+        #twitter:title {
+        #    data = page:title
+        #    ifEmpty.data = levelfield :-1, page:title, slide
+        #    attribute = name
+        #}
+
+        #twitter:description {
+        #    data = page:description
+        #    ifEmpty.data = levelfield :-1, description, slide
+        #    attribute = name
+        #}
+
+        #fb:pages {
+        #    value = 123456789
+        #    attribute = property
+        #}
+
+        #twitter:site {
+        #    value = @AcountName
+        #    attribute = name
+        #}
+    }
+
+}
+plugin.tx_formation {
+    settings {
+        uids {
+            home = {$plugin.tx_formation.settings.uids.home}
+            footerNav = {$plugin.tx_formation.settings.uids.footerNav}
+        }
+    }
+}
+
+tt_content.stdWrap.dataWrap >
+lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2022-09-15UTC15:14:230">
+        <header>
+            <authorName>Ali Werghemmi</authorName>
+            <authorEmail>ali.werghemmi@softtodo.com</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="backend_layout.default">
+                <source>Default</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.normal">
+                <source>Normal</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.home">
+                <source>Home</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.content">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.left_sidebar">
+                <source>Left Sidebar</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.header">
+                <source>Header</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.main">
+                <source>Main Content</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.footer">
+                <source>Footer</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

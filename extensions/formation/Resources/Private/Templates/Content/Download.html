@@ -1,0 +1,43 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:project="EW72\Project\ViewHelpers">
+
+<f:layout name="Default" />
+
+<f:section name="Configuration">
+    <flux:form id="download" label="Download" description="This is 'Download' CE description.">
+        <flux:field.input name="header" label="Header" />
+        <flux:field.select name="type" label="Type" items="h1, h2, h3" />
+        <flux:field.checkbox name="hideBorderCheckbox" label="Hide Border Checkbox" />
+        <flux:field.inline.fal name="downloadFiles" label="Download" required="1" minItems="1" maxItems="6"
+            collapseAll="1" allowedExtensions="pdf,zip" />
+    </flux:form>
+</f:section>
+
+
+<f:section name="Preview">
+    <h1>Download CE</h1>
+</f:section>
+
+<f:section name="Main">
+    <section class="download">
+        <f:format.html>
+            <{type} class="download-header">
+                {header}
+            </{type}>
+        </f:format.html>
+        <div class="download-buttons">
+            <f:for each="{v:content.resources.fal(field: 'downloadFiles')}" as="file">
+                <div class="download-button {f:if(condition: '{hideBorderCheckbox}', then: 'hide-border')}">
+                    <a href="{file.url}" target="_blank" rel="noopener noreferrer">
+                        {file.name} ({file.extension}
+                        <f:format.bytes decimals="1">
+                            {v:media.size(path: '{file.url}')}
+                        </f:format.bytes>)
+                    </a>
+                    <img class="download-icon" src="/assets/img/download.png" alt="Download Icon" />
+                </div>
+            </f:for>
+        </div>
+    </section>
+</f:section>

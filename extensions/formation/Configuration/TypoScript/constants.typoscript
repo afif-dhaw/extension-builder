@@ -1,0 +1,13 @@
+plugin.tx_formation {
+    settings {
+        a = hello
+        uids {
+            footerNav = 9
+        }
+    }
+    view {
+        templateRootPath = EXT:formation/Resources/Private/Templates/
+        partialRootPath = EXT:formation/Resources/Private/Partials/
+        layoutRootPath = EXT:formation/Resources/Private/Layouts/
+    }
+}

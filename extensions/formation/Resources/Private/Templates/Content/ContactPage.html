@@ -1,0 +1,46 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:project="EW72\Project\ViewHelpers">
+
+<f:layout name="Default" />
+<f:section name="Configuration">
+    <flux:form id="kontakt" label="Kontakt" description="Kontakt">
+        <flux:field.select name="type" label="type" items="Allgemein,Allgemein,Allgemein" />
+        <flux:field.input name="Name" label="Name" maxCharacters="255" />
+        <flux:field.input name="E-Mail" label="E-Mail" maxCharacters="255" />
+        <flux:field.input name="Betreff" label="Betreff" maxCharacters="255" />
+        <flux:field.text name="Text" label="Text" rows="5" cols="30" />
+
+
+    </flux:form>
+</f:section>
+
+<f:section name="Preview">
+    <h1>Kontakt</h1>
+    type: {type} <br>
+    Name: {Name} <br>
+    E-Mail: {E-Mail} <br>
+    Betreff: {Betreff} <br>
+    Text: {Text} <br>
+</f:section>
+
+<f:section name="Main">
+    <h1 class="title-contact">Kontakt</h1>
+    <select class="custom-contact">
+        <option>Allgemein</option>
+        <option>Allgemein</option>
+        <option>Allgemein</option>
+    </select>
+    <input type="text" class="custom-contact" placeholder="Name">
+    <input type="email" class="custom-contact" placeholder="E-Mail">
+    <input type="text" class="custom-contact" placeholder="Betreff">
+    <textarea rows="4" cols="50" placeholder="Text" class="custom-contact"></textarea>
+    <div class="verification-contact">
+        <input type="checkbox">
+        <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+    </div>
+    <input type="button" value="Absenden" class="button-contact">
+</f:section>
+
+
+</html>

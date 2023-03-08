@@ -1,0 +1,251 @@
+.container-filter-extension {
+    width: 100%;
+    height: 100%;
+
+    >.title {
+        height: 40px;
+        width: 256px;
+        color: #41646E;
+        font-size: 35px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 49px;
+    }
+
+    >.description {
+        height: 112px;
+        width: 930px;
+        color: #5F696B;
+        font-family: "Gill Sans";
+        font-size: 17px;
+        letter-spacing: 0;
+        line-height: 28px;
+    }
+
+    >.search {
+        height: 48px;
+        width: 650px;
+        display: flex;
+
+        >.input-search {
+            box-sizing: border-box;
+            height: 49px;
+            width: 504px;
+            border: 1px solid #006982;
+            border-radius: 4px 0 0 4px;
+            background-color: #FFFFFF;
+        }
+
+        >.button-search {
+            box-sizing: border-box;
+            height: 49px;
+            width: 148px;
+            border: 1px solid #006982;
+            border-radius: 0 4px 4px 0;
+            background-color: #41646E;
+            color: white;
+        }
+    }
+
+    >.category-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 10px;
+        padding-top: 20px;
+        width: 420px;
+
+        >.item {
+            background-color: #F7F8F8;
+
+            >.checkbox {
+                height: 15px;
+                width: 16px;
+                border: 1px solid #006982;
+
+            }
+
+            >.category-title {
+                height: 15px;
+                width: 121px;
+                color: #006982;
+                font-family: "Gill Sans";
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 0;
+                line-height: 15px;
+            }
+        }
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        >.card {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            background-color: white;
+            padding: 32px 40px;
+            border-radius: 4px;
+            box-shadow: 0px 4px 8px 0px #ddd;
+
+            >.enterprise-name {
+                color: #d4601f;
+            }
+
+            >.enterprise-infos {
+                display: flex;
+                gap: 80px;
+
+                >.enterprise-address {
+                    flex: 4;
+                }
+
+                >.enterprise-contact {
+                    flex: 8;
+                }
+
+                >.enterprise-address,
+                >.enterprise-contact {
+                    color: #313131;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    gap: 8px;
+
+                    >.alltogether {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 8px;
+
+                        >.icon {
+                            height: 16px;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ####################################
+// ##### Fluid Pagination Styling #####
+// ####################################
+$widget-base-color: #006982; // Change to any HTML color name or Hex code to see result
+$widget-text-color: #fff; // Change to any HTML color name or Hex code to see result
+$widget-padding-mobile: 16px 24px; // Padding on mobile devices
+$widget-padding-tablet: 10px 15px; // Padding on tablet devices
+$widget-padding-desktop: 8px 12px; // Padding on desktop devices
+$widget-fontsize-mobile: 1.4rem; // Font size on mobile devices
+$widget-fontsize-tablet: 1.1rem; // Font size on tablet devices
+$widget-fontsize-desktop: 1rem; // Font size on desktop devices
+$widget-border-radius: 8px; // General border-radius. Set to 0 if you don't want it
+
+.f3-widget-paginator {
+    display: flex;
+    list-style-type: none;
+    max-width: 100%;
+    overflow-x: scroll;
+    margin: 0;
+    padding: 0;
+
+    li {
+        background-color: $widget-base-color;
+        border-right: 1px solid lighten($widget-base-color, 10%);
+
+        &.current {
+            background-color: darken($widget-base-color, 10%);
+            padding: $widget-padding-mobile;
+            color: $widget-text-color;
+            font-weight: bold;
+            font-size: $widget-fontsize-mobile;
+        }
+
+        a {
+            display: block;
+            position: relative;
+            padding: $widget-padding-mobile;
+            text-decoration: none;
+            font-size: $widget-fontsize-mobile;
+            color: $widget-text-color;
+
+            &:hover {
+                background-color: darken($widget-base-color, 10%);
+            }
+        }
+
+        &.previous,
+        &.next {
+            position: relative;
+            min-width: 40px;
+
+            a {
+                text-indent: -9999px;
+                position: relative;
+
+                &:hover {
+                    background: none;
+                }
+            }
+
+            &:before {
+                content: '>';
+                font-weight: bold;
+                color: white;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+            }
+
+            &:hover {
+                background-color: darken($widget-base-color, 10%);
+            }
+        }
+
+        &.previous:before {
+            content: '<';
+        }
+
+        &:first-child {
+            border-top-left-radius: $widget-border-radius;
+            border-bottom-left-radius: $widget-border-radius;
+        }
+
+        &:last-child {
+            border-top-right-radius: $widget-border-radius;
+            border-bottom-right-radius: $widget-border-radius;
+            border-right: none;
+        }
+    }
+
+    @media (min-width: 768px) {
+        li {
+
+            &.current,
+            a {
+                padding: $widget-padding-tablet;
+                font-size: $widget-fontsize-tablet;
+            }
+        }
+    }
+
+    @media (min-width: 1024px) {
+        li {
+
+            &.current,
+            a {
+                padding: $widget-padding-desktop;
+                font-size: $widget-fontsize-desktop;
+            }
+        }
+    }
+}

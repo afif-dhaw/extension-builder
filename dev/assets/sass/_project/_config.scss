@@ -1,0 +1,109 @@
+////
+/// Project configuration
+///
+/// @group Configuration
+////
+
+/// Project breakpoints
+///
+/// If changed also update S.breakpoints in /_common/js/helpers/breakpoints.js!
+///
+/// @prop {string} key      Breakpoint name
+/// @prop {string} value    Media query definition
+///
+$breakpoints: (
+    mobilebig: 'only screen and (min-width: #{em(500px)})',
+    tablet: 'only screen and (min-width: #{em(768px)})',
+    desktop: 'print, only screen and (min-width: #{em(1024px)})',
+    l: 'print, only screen and (min-width: #{em(1200px)})',
+    xl: 'print, only screen and (min-width: #{em(1440px)})',
+    xxl: 'print, only screen and (min-width: #{em(1840px)})',
+    print: 'print',
+);
+
+// colors
+$color-white: #fff;
+$color-text: #575656;
+$color-background: $color-white;
+$color-base-100: #000;
+$color-base-0: #fff;
+$color-base-90: #333;
+$color-base-70: #666;
+$color-base-50: #999;
+$color-base-40: #8091a0;
+
+$color-base-30: #ccc;
+$color-base-10: #e9eaec;
+
+$color-primary: #002940;
+$color-grey: #8091a0;
+$color-primary-dark: #01192f;
+$color-primary-50: #80949e;
+$color-primary-20: #ccd4d9;
+$color-primary-10: #e5ebed;
+$color-secondary: #cde4c4;
+$color-secondary-30: #f0f7ed;
+$color-base-100: #000;
+$color-base-90: #333333;
+$color-base-70: #666666;
+$color-base-50: #999999;
+$color-base-30: #cccccc;
+$color-base-10: #e5e5e5;
+$color-base-0: #fff;
+$color-error: #ff221a;
+$color-passed: #02bd00;
+$color-tertiary: #f28a3e;
+
+$shadow-standard: 0px 0px 10px 0px #00000033;
+$border-radius: 5px;
+// transitions
+$transition-duration: 0.4s;
+$transition-duration-fast: 0.14s;
+$transition-timing: ease-out;
+
+// layout outer horizontal padding
+$lay-padding-mobile: 32px;
+$lay-padding-mobilebig: 32px;
+$lay-padding-tablet: 30px;
+$lay-padding-desktop: 40px;
+$lay-padding-l: 45px;
+$lay-padding-xl: 45px;
+$lay-padding-xxl: 45px;
+
+// layout max-width
+$lay-max-width-header: 1920px;
+$lay-max-width-stage: 1600px;
+$lay-max-width-content: 1164px;
+$lay-max-width-footer: 1164px;
+$lay-max-width-multicolumn: 1392px;
+
+// margin top modules
+$margin-top-mobile: 45px;
+$margin-top-mobilebig: 45px;
+$margin-top-tablet: 50px;
+$margin-top-desktop: 120px;
+$margin-top-l: 120px;
+$margin-top-xl: 120px;
+$margin-top-xxl: 120px;
+
+// module outer horizontal padding
+$mod-padding-mobile: 8px;
+$mod-padding-tablet: 10px;
+$mod-padding-desktop: 10px;
+$mod-padding-l: 10px;
+$mod-padding-xl: 12px;
+$mod-padding-xxl: 12px;
+// variables
+$height-bar-mobile: 66px;
+$height-bar-desktop: 100px;
+
+// new variables
+$background-color-button-bontact: #006982;
+$color-telephone-contact: #52565F;
+$color-address-contact: #52565F;
+$background-color-custom-contact: #FFFFFF;
+$color-title-contact: #41646E;
+$background-color-download-page: white;
+$color-download-header:#5f696b;
+$color-link-download-button: #3e4a4c;
+

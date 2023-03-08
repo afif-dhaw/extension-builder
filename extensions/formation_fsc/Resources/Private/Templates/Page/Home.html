@@ -1,0 +1,38 @@
+<f:layout name="Page" />
+<f:section name="Main">
+    <div class="lay-home">
+        <!-- prettier-ignore -->
+        <f:comment> 
+            This is our backend layout ( main content are colPos=0, Header colPos=2 and Footer colPos=7)
+            +---+-------+ 
+            | 1 | 2 | 3 | 
+            +---+-------+ 
+            | 4 | 0 | 5 | 
+            +---+-------+
+            | 6 | 7 | 8 | 
+            +---+-------+ 
+        </f:comment>
+
+        <header class="l-header">
+            <f:render partial="Header/Header" arguments="{_all}" />
+        </header>
+
+        <main class="l-main">
+            <div class="l-stage">
+                <f:comment> render content of colPos 2 ( usually it's a stage content) </f:comment>
+                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '2'}" />
+            </div>
+            <div id="content" class="l-content">
+                <f:comment> render content of colPos 0 </f:comment>
+                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+            </div>
+        </main>
+
+        <footer class="l-footer">
+            <f:comment> render content of colPos 7 </f:comment>
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '7'}" />
+
+            <f:render partial="Footer/Footer" arguments="{_all}" />
+        </footer>
+    </div>
+</f:section>

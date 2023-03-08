@@ -1,0 +1,25 @@
+base: /
+enabled_oauth2_providers: ''
+flux_content_types: ''
+flux_page_templates: ''
+languages:
+  -
+    title: English
+    enabled: true
+    base: /
+    typo3Language: default
+    locale: en_US.UTF-8
+    iso-639-1: ab
+    websiteTitle: ''
+    navigationTitle: ''
+    hreflang: ''
+    direction: ''
+    flag: global
+    languageId: 0
+    enabled_oauth2_providers: ''
+    oauth2_callback_slug: ''
+    oauth2_storage_pid: ''
+oauth2_callback_slug: ''
+oauth2_storage_pid: ''
+rootPageId: 7
+websiteTitle: ''

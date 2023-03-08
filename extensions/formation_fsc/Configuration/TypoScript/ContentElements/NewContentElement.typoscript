@@ -1,0 +1,6 @@
+tt_content {
+    formation_fsc_newcontentelement =< lib.contentElement
+    formation_fsc_newcontentelement {
+        templateName = NewContentElement
+    }
+}

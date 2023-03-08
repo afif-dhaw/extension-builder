@@ -1,0 +1,5 @@
+RTE.default.preset = project_default
+RTE.default.proc.entryHTMLparser_db {
+    stripEmptyTags = 1
+    stripEmptyTags.tags = p
+}

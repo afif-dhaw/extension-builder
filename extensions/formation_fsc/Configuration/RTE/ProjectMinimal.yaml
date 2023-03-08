@@ -1,0 +1,48 @@
+# Import basic configuration
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:project/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+    config:
+        contentsCss:
+            - "EXT:project/Resources/Public/Css/RTE/Project.css"
+            - "EXT:project/Resources/Public/Css/RTE/ProjectMinimal.css"
+
+#        stylesSet:
+#            # block level styles
+#            - { name: "Spezial H2", element: "h2", attributes: { class: 'is-special' } }
+#            - { name: "Code", element: "code" }
+#            # Inline styles
+#            - { name: 'Markierung', element: 'mark' }
+
+        toolbarGroups:
+            - { name: basicstyles, groups: [ basicstyles ] }
+            - { name: paragraph, groups: [ list, indent ] }
+            - { name: links, groups: [ links ] }
+            - { name: insert, groups: [ insert ] }
+            - { name: styles, groups: [ styles ] }
+            - { name: clipboard, groups: [ clipboard, undo ] }
+            - { name: document, groups: [ mode ] }
+            - { name: tools, groups: [ tools ] }
+
+        removeButtons:
+            - Anchor
+            - Superscript
+            - Subscript
+            - Underline
+            - Strike
+            - Image
+            - Table
+            - SpecialChar
+            - Format
+
+        extraPlugins:
+            - autogrow
+            - wordcount
+
+        autoGrow_onStartup: true

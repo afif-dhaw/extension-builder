@@ -1,0 +1,70 @@
+# Generated files
+/dev/assets/css/*.min.css*
+/dev/assets/js/*.min.js*
+/public/*
+/uploads/*
+# Gulp cache
+/.gulp-cache/
+
+# Dependency directories
+/bower_components/
+/node_modules/
+/vendor/
+
+# PhpStorm
+/.idea/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# For safety reasons
+.svn
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# TYPO3
+/dev/fileadmin/
+/dev/typo3/
+/dev/typo3conf/*
+#!/dev/typo3conf/ext
+#/dev/typo3conf/ext/*
+#!/dev/typo3conf/ext/fixed_extension
+/dev/typo3temp/
+/dev/FIRST_INSTALL
+/dev/index.php
+/var/*
+!/var/labels
+/dev/typo3conf/LocalConfiguration.php
+extensions/____formation_flux

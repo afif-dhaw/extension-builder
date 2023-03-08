@@ -1,0 +1,28 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+    xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" xmlns:project="EW72\Project\ViewHelpers">
+<f:layout name="Default" />
+<f:section name="Configuration">
+    <flux:form id="page_register" label="page_register" description="page_register">
+        <flux:field.input name="registerText" label="Register Text" maxCharacters="255" />
+        <flux:field.input name="registerTarget" label="Register Button" config="{renderType: 'inputLink'}" >
+            <flux:wizard.link  />
+        </flux:field.input>
+    </flux:form>
+</f:section>
+
+<f:section name="Preview">
+    <h1>Anmelden :</h1>
+</f:section>
+
+<f:section name="Main">
+    <div class="grid-right">
+        <div class="register-msg">
+            <p>{registerText}</p>
+            <f:link.typolink parameter="{registerTarget}"><button class="favorite styled" type="button">MITGLID WERDEN</button></f:link.typolink>
+        </div>
+    </div>
+</f:section>
+
+</html>

@@ -1,0 +1,13 @@
+#
+# PageTS for formation_fsc
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:formation_fsc/Configuration/TsConfig/Page/RTE.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:formation_fsc/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:formation_fsc/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:formation_fsc/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">
+
+
+##########################
+#### CONTENT ELEMENTS ####
+##########################
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:formation_fsc/Configuration/TsConfig/ContentElements/" extensions="tsconfig">

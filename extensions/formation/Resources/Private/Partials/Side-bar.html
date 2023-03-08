@@ -1,0 +1,13 @@
+<div class="menu-side-bar">
+    <h2 class="title-menu">sideBar</h2>
+    <v:menu classActive="is-active" pageUid="{settings.uids.footerNav}">
+        <ul>
+            <f:for each="{menu}" as="menuPage">
+                <li>
+                    <f:link.page pageUid="{menuPage.uid}" class="m-item-link"> {menuPage.title}
+                    </f:link.page>
+                </li>
+            </f:for>
+        </ul>
+    </v:menu>
+</div>

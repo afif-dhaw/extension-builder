@@ -1,0 +1,46 @@
+#
+# BACKENDLAYOUT: CONTENT
+#
+mod {
+    web_layout {
+        BackendLayouts {
+            content {
+                title = LLL:EXT:formation_fsc/Resources/Private/Language/locallang_be.xlf:backend_layout.content
+                config {
+                    backend_layout {
+                        colCount = 4
+                        rowCount = 2
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:formation_fsc/Resources/Private/Language/locallang_be.xlf:backend_layout.column.left_sidebar
+                                        colPos = 4
+                                    }
+                                    2 {
+                                        name = LLL:EXT:formation_fsc/Resources/Private/Language/locallang_be.xlf:backend_layout.column.main
+                                        colspan = 3
+                                        colPos = 0
+                                        allowed {
+                                            CType = formation_fsc_newcontentelement
+                                        }
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:formation_fsc/Resources/Private/Language/locallang_be.xlf:backend_layout.column.footer
+                                        colspan = 4
+                                        colPos = 7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                icon = EXT:formation_fsc/Resources/Public/Images/BackendLayouts/default.png
+            }
+        }
+    }
+}

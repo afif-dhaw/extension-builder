@@ -1,0 +1,17 @@
+
+mod.wizards.newContentElement.wizardItems {
+   // add the content element to the tab "common"
+   common {
+      elements {
+         formation_fsc_newcontentelement {
+            iconIdentifier = content-text
+            title = LLL:EXT:formation_fsc/Resources/Private/Language/locallang.xlf:formation_fsc.newcontentelement.title
+            description = LLL:EXT:examples/Resources/Private/Language/locallang.xlf:formation_fsc.newcontentelement.description
+            tt_content_defValues {
+               CType = formation_fsc_newcontentelement
+            }
+         }
+      }
+      show := addToList(formation_fsc_newcontentelement)
+   }
+}

@@ -1,0 +1,20 @@
+<f:layout name="Page" />
+<f:section name="Main">
+    <div class="lay-default">
+        <!-- prettier-ignore -->
+        <f:comment> 
+            This is our backend layout ( main content are colPos=0, Header colPos=2 and Footer colPos=7)
+            +---+-------+ 
+            | 1 | 2 | 3 | 
+            +---+-------+ 
+            | 4 | 0 | 5 | 
+            +---+-------+
+            | 6 | 7 | 8 | 
+            +---+-------+ 
+        </f:comment>
+        <main class="l-main">
+            <f:comment> render content of colPos 0 </f:comment>
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+        </main>
+    </div>
+</f:section>

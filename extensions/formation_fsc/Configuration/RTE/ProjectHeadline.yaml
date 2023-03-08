@@ -1,0 +1,48 @@
+# Import basic configuration
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:project/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+    config:
+        contentsCss:
+            - "EXT:project/Resources/Public/Css/RTE/Project.css"
+            - "EXT:project/Resources/Public/Css/RTE/ProjectHeadline.css"
+
+        stylesSet:
+            # Inline styles
+            - { name: 'Auszeichnung', element: 'span', attributes: { class: 'm-highlight' } }
+
+        # prevent <p> tag [CKEDITOR.ENTER_BR (2)]
+        enterMode: 2
+        shiftEnterMode: 2
+        forceEnterMode: true
+
+        toolbarGroups:
+            - { name: basicstyles, groups: [ basicstyles] }
+            - { name: styles, groups: [ styles ] }
+            - { name: clipboard, groups: [clipboard, undo] }
+            - { name: document, groups: [ mode ] }
+
+        removeButtons:
+            - Anchor
+            - Superscript
+            - Subscript
+            - Underline
+            - Strike
+            - Format
+
+        removePlugins:
+            - elementspath
+            - resize
+
+        extraPlugins:
+            - autogrow
+
+        height: 100
+        resize_minHeight: 0
+        autoGrow_minHeight: 0
+        autoGrow_onStartup: true

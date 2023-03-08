@@ -1,0 +1,32 @@
+{
+    "name": "softtodo/formation-fsc",
+    "type": "typo3-cms-extension",
+    "description": "This TYPO3 extension is an example to use Fluid Styled Content for creating contents",
+    "license": "proprietary",
+    "state": "stable",
+    "clearCacheOnLoad": true,
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "SOFTTODO Documentation Team",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Softtodo\\FormationFsc\\": "Classes/"
+        }
+    },
+    "require": {
+        "typo3/cms-core": "^10",
+        "typo3/cms-impexp": "^10"
+    },
+    "replace": {
+        "typo3-ter/formation_fsc": "self.version"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "formation_fsc"
+        }
+    }
+}

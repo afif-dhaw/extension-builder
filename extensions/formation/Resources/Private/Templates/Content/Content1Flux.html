@@ -1,0 +1,39 @@
+<html data-namespace-typo3-fluid="true" 
+    xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" 
+    xmlns:project="EW72\Project\ViewHelpers">
+
+<f:layout name="Default" />
+<f:section name="Configuration">
+    <flux:form id="home_example" label="home_example" description="home_example">
+        <flux:field.input name="headtitle" label="Header" maxCharacters="255" />
+        <flux:field.select name="type" label="type" items="h1, h2, h3" />
+        <flux:field.input name="descs" label="Text" maxCharacters="255" />
+    </flux:form>
+</f:section>
+
+
+<f:section name="Preview">
+    <h1>Content Element</h1>
+    title : {headtitle} <br>
+    Type : {type} <br>
+    description : {descs}<br>
+</f:section>
+
+<f:section name="Main">
+    <div class="head_title">
+       <h1>Konakt</h1>
+    </div>
+    <div class="content {scolor}-border">
+        <span class="body_text"> {type} </span>
+        <span class="path {scolor}-path" style="float: right;">
+            <i class="fa fa-arrow-right white-color" aria-hidden="true"></i>
+        </span>
+    </div>
+    <div class="head_desc">
+        {descs}
+    </div>
+</f:section>
+
+</html>

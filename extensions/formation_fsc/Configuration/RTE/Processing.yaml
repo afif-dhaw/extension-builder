@@ -1,0 +1,4 @@
+processing:
+    # Tags that are allowed in the content in general
+    allowTags:
+        - mark

@@ -1,0 +1,29 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:project="EW72\Project\ViewHelpers">
+
+<f:layout name="Default" />
+<f:section name="Configuration">
+    <flux:form id="SideBar" label="SideBar" description="SideBar">
+        <flux:field.input name="title" label="Header" />
+        <flux:field.inline.fal name="image1Sidebar" required="1" maxItems="1" minItems="1" collapseAll="1" />
+        <flux:field.text name="descs" label="Text" />
+        <flux:field.inline.fal name="image2Sidebar" required="1" maxItems="1" minItems="1" collapseAll="1" />
+    </flux:form>
+</f:section>
+
+<f:section name="Preview">
+    <h1>Content Element</h1>
+    title : {title} <br>
+    image title: {image1Sidebar}<br>
+    description : {descs}<br>
+    image description: {image2Sidebar}<br>
+</f:section>
+
+<f:section name="Main">
+    <v:page.menu pageUid="9"></v:page.menu>
+    <h1>Hello, World!</h1>
+    <p>(from Templates\Content\SideBar.html)</p>
+</f:section>
+
+</html>

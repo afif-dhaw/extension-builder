@@ -1,0 +1,81 @@
+.container-contact {
+    display: flex;
+    padding: 10px 400px;
+    gap: 80px;
+    background-color: $color-base-0;
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+
+        .button-contact {
+            height: 48px;
+            width: 260px;
+            border-radius: 8px;
+            background-color: $background-color-button-bontact;
+            color: $color-base-0;
+            border: 1px solid #41646E;
+        }
+
+        .custom-contact {
+            box-sizing: border-box;
+            height: 49px;
+            width: 500px;
+            border: 1px solid #41646E;
+            border-radius: 6px;
+            background-color: $background-color-custom-contact;
+            margin-bottom: 15px;
+        }
+
+        .verification-contact {
+            display: flex;
+            gap: 10px;
+            color: #41646E;
+        }
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+
+        .telephone {
+            display: flex;
+            margin-top: 40px;
+            height: 40px;
+            width: 204px;
+            color: $color-telephone-contact;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0;
+            line-height: 20px;
+        }
+
+        .adress {
+            height: 40px;
+            width: 204px;
+            color: $color-address-contact;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 0;
+            line-height: 20px;
+            margin-top: 76px;
+        }
+    }
+}
+
+
+
+
+
+.separator {
+    box-sizing: border-box;
+    height: 500px;
+    width: 1px;
+    border: 1px solid #CDD5EA;
+}
+
+.title-contact {
+    color: $color-title-contact;
+}

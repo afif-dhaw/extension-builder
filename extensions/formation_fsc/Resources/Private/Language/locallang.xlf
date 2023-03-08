@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2022-09-15UTC15:14:230">
+        <header>
+            <authorName>Ali Werghemmi</authorName>
+            <authorEmail>ali.werghemmi@softtodo.com</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="formation_fsc.newcontentelement.title">
+                <source>New Content Element Title</source>
+            </trans-unit>
+            <trans-unit id="formation_fsc.newcontentelement.title">
+                <source>A new content element for SOFTTODO formation team</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

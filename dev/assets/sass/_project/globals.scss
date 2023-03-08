@@ -1,0 +1,22 @@
+:root {
+    // DO NOT EDIT! THIS WHOLE BLOCK WILL BE OVERWRITTEN BY JAVASCRIPT!
+    --scrollbar-width: 17px;
+    --scrollbar-half-width: 8.5px;
+}
+
+body {
+    &.no-transition:not(.no-js) {
+        &,
+        *,
+        ::before,
+        ::after {
+            transition: none !important;
+        }
+    }
+}
+
+[class^='mod-'] {
+    :last-child {
+        // margin-bottom: 0;
+    }
+}

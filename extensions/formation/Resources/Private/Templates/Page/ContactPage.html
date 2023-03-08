@@ -1,0 +1,33 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+<f:layout name="Page" />
+
+<f:section name="Configuration">
+    <flux:form id="contact" label="ContactPage"> </flux:form>
+    <flux:grid>
+        <flux:grid.row>
+            <flux:grid.column colPos="0" colspan="9" name="content" label="content"> </flux:grid.column>
+            <flux:grid.column colPos="1" colspan="3" name="sidebar" label="sidebar"></flux:grid.column>
+        </flux:grid.row>
+    </flux:grid>
+</f:section>
+
+
+<f:section name="Preview">
+
+</f:section>
+
+<f:section name="Main">
+    <div class="container-contact">
+        <div class="contact-form">
+            <v:content.render column="0" />
+        </div>
+        <div class="separator"></div>
+        <div class="contact-info">
+            <v:content.render column="1" />
+        </div>
+    </div>
+</f:section>
+
+</html>
