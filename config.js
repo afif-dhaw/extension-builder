@@ -61,6 +61,7 @@ module.exports = {
 
                     // templates
                     'extensions/formation/Resources/Public/**/*.js',
+                    'extensions/filter/Resources/Public/**/*.js',
                     'extensions/formation/Resources/Private/**/*.js',
                     '!extensions/formation/Resources/Private/**/_*.js',
                     'extensions/formation_fsc/Resources/Private/**/**/*.js',

@@ -45,6 +45,7 @@ class EnterpriseRepository extends Repository
      */
     public function getByQueryAndCategories(string $query = "", array $categories = [])
     {
+       
         $this->connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
         $queryBuilder = $this->connectionPool->getQueryBuilderForTable($this->enterpriseName);
         $queryBuilder = $queryBuilder->select('*')->from($this->enterpriseName);

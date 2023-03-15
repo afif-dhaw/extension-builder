@@ -18,11 +18,11 @@ defined('TYPO3_MODE') || die();
         'Filter',
         'Filter',
         [
-            \Filter\Filter\Controller\EnterpriseController::class => 'filter, filterajax'
+            \Filter\Filter\Controller\EnterpriseController::class => 'filter'
         ],
         // non-cacheable actions
         [
-            \Filter\Filter\Controller\EnterpriseController::class => 'filter, filterajax'
+            \Filter\Filter\Controller\EnterpriseController::class => 'filter'
         ]
     );
 
@@ -35,6 +35,18 @@ defined('TYPO3_MODE') || die();
         // non-cacheable actions
         [
             \Filter\Filter\Controller\EnterpriseController::class => 'listajax'
+        ]
+    );
+
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'Filter',
+        'Filterajax',
+        [
+            \Filter\Filter\Controller\EnterpriseController::class => 'filterajax'
+        ],
+        // non-cacheable actions
+        [
+            \Filter\Filter\Controller\EnterpriseController::class => 'filterajax'
         ]
     );
 
@@ -70,6 +82,15 @@ defined('TYPO3_MODE') || die();
                             list_type = filter_listajax
                         }
                     }
+                    filterajax {
+                        iconIdentifier = filter-plugin-filterajax
+                        title = LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_filterajax.name
+                        description = LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_filterajax.description
+                        tt_content_defValues {
+                            CType = list
+                            list_type = filter_filterajax
+                        }
+                    }
                 }
                 show = *
             }
@@ -91,5 +112,10 @@ defined('TYPO3_MODE') || die();
         'filter-plugin-listajax',
         \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         ['source' => 'EXT:filter/Resources/Public/Icons/user_plugin_listajax.svg']
+    );
+    $iconRegistry->registerIcon(
+        'filter-plugin-filterajax',
+        \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        ['source' => 'EXT:filter/Resources/Public/Icons/user_plugin_filterajax.svg']
     );
 })();

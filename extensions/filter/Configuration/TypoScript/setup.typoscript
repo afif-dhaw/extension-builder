@@ -42,14 +42,6 @@ plugin.tx_filter_filter {
         #callDefaultActionIfActionCantBeResolved = 1
     }
 }
-
-plugin.tx_filter{
-    settings{
-        uids{
-           typeNumVal = {$plugin.tx_formation.settings.uids.typeNumVal} 
-        }
-    }
-}
 plugin.tx_filter_listajax {
     view {
         templateRootPaths.0 = EXT:filter/Resources/Private/Templates/
@@ -106,10 +98,6 @@ plugin.tx_filter._CSS_DEFAULT_STYLE (
         color:green;
     }
 )
-
-
-
-
 AJAXPage = PAGE
 AJAXPage {
     typeNum = {$plugin.tx_formation.settings.uids.typeNumVal}
@@ -135,4 +123,3 @@ AJAXPage {
     }
 
 }
-

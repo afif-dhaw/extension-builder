@@ -251,6 +251,15 @@
                 "description": "",
                 "key": "listajax",
                 "name": "listajax"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Enterprise=>filterajax",
+                    "noncacheableActions": "Enterprise=>filterajax"
+                },
+                "description": "",
+                "key": "filterajax",
+                "name": "Filterajax"
             }
         ],
         "vendorName": "Filter"
@@ -271,7 +280,7 @@
     ],
     "storagePath": "C:\/laragon\/www\/formation-typo3-main\/extensions\/",
     "log": {
-        "last_modified": "2023-03-08 03:14",
+        "last_modified": "2023-03-14 09:07",
         "extension_builder_version": "10.0.3",
         "be_user": " (1)"
     }

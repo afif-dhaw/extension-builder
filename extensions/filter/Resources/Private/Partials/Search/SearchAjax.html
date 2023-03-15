@@ -1,0 +1,36 @@
+<div class="filter">
+    <f:comment>
+        <f:form id="ajax-form" action="filterajax" name="filterajax" pluginName="filter" controller="Enterprise">
+            <div class="search">
+                <f:form.textfield id="search-query" name="query" class="input-search" value=""
+                    placeholder="SUCHE NACH FIRMENNAME" />
+                <input class="button-search" name="submit" type="submit" value="SUCHE" id="button-search">
+            </div>
+            <div class="category-items">
+                <f:if condition="{categories}">
+                    <f:for each="{categories}" as="category">
+                        <div class="item">
+                            <f:form.checkbox name="categories[]" value="{category.uid}" />
+                            <span class="category-title">{category.Name}</span>
+                        </div>
+                    </f:for>
+                </f:if>
+            </div>
+        </f:form>
+    </f:comment>
+    <div class="search">
+        <f:form.textfield id="search-query" name="query" class="input-search" value=""
+            placeholder="SUCHE NACH FIRMENNAME" />
+        <button class="button-search" id="submit" type="button" value="SUCHE" id="button-search">click</button>
+    </div>
+    <div class="category-items">
+        <f:if condition="{categories}">
+            <f:for each="{categories}" as="category">
+                <div class="item">
+                    <f:form.checkbox name="categories[]" value="{category.uid}" />
+                    <span class="category-title">{category.Name}</span>
+                </div>
+            </f:for>
+        </f:if>
+    </div>
+</div>

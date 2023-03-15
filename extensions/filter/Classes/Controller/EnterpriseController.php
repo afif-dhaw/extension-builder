@@ -139,8 +139,20 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      *
      * @return string|object|null|void
      */
-    public function filterajaxAction()
+    public function filterajaxAction(String $query = '', array $categories = [])
     {
+        //debug($query);
+        //debug($categories);
+        //die();
+        //$categories = $this->request->getArgument('categories');
+        //$categories = is_array($categories) ? $categories : [];
+        //debug($query);
+        //debug($categories);
+        //die;
+        $enterprise = $this->enterpriseRepository->getByQueryAndCategories($query, $categories);
+        $this->view->assign('enterprises', $enterprise);
+        $this->view->assign('selectedCategories', $categories);
+        $this->view->assign('categories', $this->categoryRepository->findAll());
     }
 
     /**
@@ -158,6 +170,9 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function listajaxAction()
     {
-        
-        }
+        $enterprises = $this->enterpriseRepository->findAll();
+        $categories = $this->categoryRepository->findAll();
+        $this->view->assign('enterprises', $enterprises);
+        $this->view->assign('categories', $categories);
+    }
 }

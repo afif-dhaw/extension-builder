@@ -1,13 +1,12 @@
 <f:form action="filter" name="filter" pluginName="filter" controller="Enterprise" pageUid="26">
     <div class="search">
-        <f:form.textfield name="query" class="input-search"  value="default value" placeholder="SUCHE NACH FIRMENNAME" />
+        <f:form.textfield name="query" class="input-search" value="" placeholder="SUCHE NACH FIRMENNAME" />
         <input class="button-search" type="submit" value="SUCHE">
     </div>
     <div class="category-items">
         <f:if condition="{categories}">
             <f:for each="{categories}" as="category">
                 <div class="item">
-
                     <f:form.checkbox name="categories[]" value="{category.uid}" />
                     <span class="category-title">{category.Name}</span>
                 </div>

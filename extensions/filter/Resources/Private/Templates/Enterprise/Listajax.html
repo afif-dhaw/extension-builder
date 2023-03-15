@@ -2,26 +2,26 @@
   xmlns:vhs="http://typo3.org/ns/VHS/ViewHelpers">
 <f:layout name="Default" />
 <f:section name="content">
-  <div class="container-filter-extension">
+  <div class="container-filter-extension" id="container-filter-extension">
     <h1 class="title">Mitgliederliste</h1>
     <h4 class="description">Mitglieder unterliegen einer strengen Kontrolle — und eine Mitgliedschaft im BDIU ist ein
       Qualitâtssiegel für seriòses Inkasso. ln der Mitgliederliste finden Auftraggeber das für sie
       passende Unternehmen und Verbraucher kònnen prüfen, Ob sie von einem BDIU-
       Mitgliedsunternehmen kontaktiert wurden.</h4>
-    <f:render partial="Search/Search" arguments="{categories: categories}" />
+    <f:render partial="Search/SearchAjax" arguments="{categories: categories}" />
 
     <f:variable name="ajaxUri"
-      value="{f:uri.action(action: 'filterajax', controller: 'Enterprise', pageType: settings.uids.typeNumVal )}"></f:variable>
-
-    <f:debug>{ajaxUri}</f:debug>
+      value="{f:uri.action(action: 'filterajax', controller: 'Enterprise', pageType: settings.uids.typeNumVal )}">
+    </f:variable>
     <div class="cards">
       <f:render partial="Enterprise/List" arguments="{enterprises:enterprises}" />
     </div>
 
   </div>
 
+  <f:comment> {f:uri.action(action: 'filterajax', pageType: 7485692582)}</f:comment>
 
-
+  <input type="hidden" id="url1" value="{f:uri.action(action: 'filterajax', pageType: 7485692582, absolute: 1)}">
 
 </f:section>
 

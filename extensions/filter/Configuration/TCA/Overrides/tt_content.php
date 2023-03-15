@@ -18,3 +18,9 @@ defined('TYPO3_MODE') || die();
     'Listajax',
     'listajax'
 );
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+    'Filter',
+    'Filterajax',
+    'Filterajax'
+);
