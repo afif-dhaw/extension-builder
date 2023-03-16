@@ -57,8 +57,8 @@ defined('TYPO3_MODE') || die();
                 elements {
                     enterprise {
                         iconIdentifier = filter-plugin-enterprise
-                        title = LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_enterprise.name
-                        description = LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_enterprise.description
+                        title = enterprise
+                        description = enterprise
                         tt_content_defValues {
                             CType = list
                             list_type = filter_enterprise
@@ -66,8 +66,8 @@ defined('TYPO3_MODE') || die();
                     }
                     filter {
                         iconIdentifier = filter-plugin-filter
-                        title = LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_filter.name
-                        description = LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_filter.description
+                        title = filter
+                        description = filter
                         tt_content_defValues {
                             CType = list
                             list_type = filter_filter
@@ -75,8 +75,8 @@ defined('TYPO3_MODE') || die();
                     }
                     listajax {
                         iconIdentifier = filter-plugin-listajax
-                        title = LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_listajax.name
-                        description = LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_listajax.description
+                        title = listajax
+                        description = listajax
                         tt_content_defValues {
                             CType = list
                             list_type = filter_listajax
@@ -84,8 +84,8 @@ defined('TYPO3_MODE') || die();
                     }
                     filterajax {
                         iconIdentifier = filter-plugin-filterajax
-                        title = LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_filterajax.name
-                        description = LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_filterajax.description
+                        title = filterajax
+                        description = filterajax
                         tt_content_defValues {
                             CType = list
                             list_type = filter_filterajax

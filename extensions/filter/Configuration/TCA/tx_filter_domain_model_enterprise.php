@@ -20,7 +20,7 @@ return [
         'iconfile' => 'EXT:filter/Resources/Public/Icons/tx_filter_domain_model_enterprise.gif'
     ],
     'types' => [
-        '1' => ['showitem' => 'name, address, phone, website, email, code_postal, ville, category, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],
+        '1' => ['showitem' => 'name, address, phone, website, email, code_postal, ville, category, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime,  --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,category_perms'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -103,7 +103,25 @@ return [
                 ]
             ],
         ],
-
+        'category_perms' => [
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:category_perms',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectTree',
+                'foreign_table' => 'sys_category',
+                'foreign_table_where' => ' AND (sys_category.sys_language_uid = 0 OR sys_category.l10n_parent = 0)',
+                'treeConfig' => [
+                    'parentField' => 'parent',
+                    'appearance' => [
+                        'expandAll' => false,
+                        'showHeader' => false,
+                        'maxLevels' => 99,
+                    ],
+                ],
+                'size' => 20,
+                'minitems' => 0,
+            ]
+        ],
         'name' => [
             'exclude' => true,
             'label' => 'LLL:EXT:filter/Resources/Private/Language/locallang_db.xlf:tx_filter_domain_model_enterprise.name',

@@ -3,8 +3,8 @@
         {
             "config": {
                 "position": [
-                    560,
-                    56
+                    764,
+                    138
                 ]
             },
             "name": "New Model Object",
@@ -144,8 +144,8 @@
         {
             "config": {
                 "position": [
-                    318,
-                    62
+                    237,
+                    386
                 ]
             },
             "name": "New Model Object",
@@ -236,8 +236,8 @@
             },
             {
                 "actions": {
-                    "controllerActionCombinations": "Enterprise=>filter,filterajax",
-                    "noncacheableActions": "Enterprise=>filter,filterajax"
+                    "controllerActionCombinations": "Enterprise=>filter",
+                    "noncacheableActions": "Enterprise=>filter"
                 },
                 "description": "",
                 "key": "filter",
@@ -280,7 +280,7 @@
     ],
     "storagePath": "C:\/laragon\/www\/formation-typo3-main\/extensions\/",
     "log": {
-        "last_modified": "2023-03-14 09:07",
+        "last_modified": "2023-03-15 02:25",
         "extension_builder_version": "10.0.3",
         "be_user": " (1)"
     }

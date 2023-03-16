@@ -9,20 +9,14 @@
       passende Unternehmen und Verbraucher kònnen prüfen, Ob sie von einem BDIU-
       Mitgliedsunternehmen kontaktiert wurden.</h4>
     <f:render partial="Search/SearchAjax" arguments="{categories: categories}" />
-
     <f:variable name="ajaxUri"
       value="{f:uri.action(action: 'filterajax', controller: 'Enterprise', pageType: settings.uids.typeNumVal )}">
     </f:variable>
     <div class="cards">
       <f:render partial="Enterprise/List" arguments="{enterprises:enterprises}" />
     </div>
-
   </div>
-
-  <f:comment> {f:uri.action(action: 'filterajax', pageType: 7485692582)}</f:comment>
-
   <input type="hidden" id="url1" value="{f:uri.action(action: 'filterajax', pageType: 7485692582, absolute: 1)}">
-
 </f:section>
 
 </html>

@@ -14,6 +14,7 @@ $(document).ready(function () {
         'tx_filter_filterajax[categories]': categories
       },
       success: function (data) {
+        $('#container-filter-extension').html(data);
       },
       error: function (jqXHR, textStatus, errorThrown) {
       },

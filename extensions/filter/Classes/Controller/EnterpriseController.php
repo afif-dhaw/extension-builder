@@ -137,18 +137,12 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     /**
      * action filterajax
      *
+     * @param string $query
+     * @param array $categories
      * @return string|object|null|void
      */
-    public function filterajaxAction(String $query = '', array $categories = [])
+    public function filterajaxAction(string $query = '', array $categories = [])
     {
-        //debug($query);
-        //debug($categories);
-        //die();
-        //$categories = $this->request->getArgument('categories');
-        //$categories = is_array($categories) ? $categories : [];
-        //debug($query);
-        //debug($categories);
-        //die;
         $enterprise = $this->enterpriseRepository->getByQueryAndCategories($query, $categories);
         $this->view->assign('enterprises', $enterprise);
         $this->view->assign('selectedCategories', $categories);
@@ -161,7 +155,7 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     public function injectEnterpriseRepository(\Filter\Filter\Domain\Repository\EnterpriseRepository $enterpriseRepository)
     {
         $this->enterpriseRepository = $enterpriseRepository;
-    }
+    } 
 
     /**
      * action listajax
