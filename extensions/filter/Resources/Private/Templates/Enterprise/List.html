@@ -15,17 +15,19 @@ List.html: keep
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-  <div class="container-filter-extension">
-    <h1 class="title">Mitgliederliste</h1>
-    <h4 class="description">Mitglieder unterliegen einer strengen Kontrolle — und eine Mitgliedschaft im BDIU ist ein
-      Qualitâtssiegel für seriòses Inkasso. ln der Mitgliederliste finden Auftraggeber das für sie
-      passende Unternehmen und Verbraucher kònnen prüfen, Ob sie von einem BDIU-
-      Mitgliedsunternehmen kontaktiert wurden.</h4>
-    <f:render partial="Search/Search" arguments="{categories: categories}" />
-    <div class="cards">
-      <f:render partial="Enterprise/List" arguments="{enterprises:enterprises}" />
+  <section class="enterprises-list">
+    <div class="container">
+      <h1 class="title">Mitgliederliste</h1>
+      <h4 class="description">Mitglieder unterliegen einer strengen Kontrolle — und eine Mitgliedschaft im BDIU ist ein
+        Qualitâtssiegel für seriòses Inkasso. ln der Mitgliederliste finden Auftraggeber das für sie
+        passende Unternehmen und Verbraucher kònnen prüfen, Ob sie von einem BDIU-
+        Mitgliedsunternehmen kontaktiert wurden.</h4>
+      <f:render partial="Search/Search" arguments="{categories: categories}" />
+      <div class="cards">
+        <f:render partial="Enterprise/List" arguments="{enterprises:enterprises}" />
+      </div>
     </div>
-
+  </section>
   </div>
 
 
