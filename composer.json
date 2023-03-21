@@ -13,6 +13,7 @@
 		"sort-packages": true
 	},
 	"require": {
+		"blueways/bw-captcha": "^2.0",
 		"filter/filter": "@dev",
 		"fluidtypo3/flux": "^9.5",
 		"fluidtypo3/vhs": "^6.0",

@@ -1,0 +1,34 @@
+#kontaktForm-33-singleselect-1,
+#kontaktForm-33-text-1,
+#kontaktForm-33-email-1,
+#kontaktForm-33-text-2,
+#kontaktForm-33-textarea-1 {
+    box-sizing: border-box;
+    height: 49px;
+    width: 609px;
+    border: 1px solid #41646E;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    margin-top: 15px;
+}
+
+#kontaktForm-33-captcha-1 {
+    box-sizing: border-box;
+    height: 35px;
+    width: 200px;
+    border: 1px solid #41646E;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+}
+
+.btn {
+    height: 48px;
+    width: 200px;
+    border-radius: 8px;
+    background-color: #006982;
+    color: #fff;
+    margin-top: 15px;
+}
+.required {
+    display: none;
+}

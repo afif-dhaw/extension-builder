@@ -4,8 +4,68 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f193ccb8348cb3b01451fa70ec9682b",
+    "content-hash": "2f2b8e5ee783e7910612fb250250cd0e",
     "packages": [
+        {
+            "name": "blueways/bw-captcha",
+            "version": "v2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maikschneider/bw_captcha.git",
+                "reference": "0b83d4eee591198177a1f9abd4efb2be1f44b893"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maikschneider/bw_captcha/zipball/0b83d4eee591198177a1f9abd4efb2be1f44b893",
+                "reference": "0b83d4eee591198177a1f9abd4efb2be1f44b893",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "^10.0 || ^11.0 || ^12.0"
+            },
+            "require-dev": {
+                "bk2k/bootstrap-package": "dev-master",
+                "friendsofphp/php-cs-fixer": "^3.12",
+                "roave/security-advisories": "dev-latest",
+                "saschaegerer/phpstan-typo3": "12.0.x-dev",
+                "typo3/cms-base-distribution": "^12.0",
+                "typo3/cms-lowlevel": "^12.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": "public",
+                    "extension-key": "bw_captcha"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gregwar\\Captcha\\": "Libraries/Captcha/src/Gregwar/Captcha",
+                    "Blueways\\BwCaptcha\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Maik Schneider",
+                    "email": "schneider.maik@me.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TYPO3 extension that integrates gregwar/captcha into Form",
+            "keywords": [
+                "typo3"
+            ],
+            "support": {
+                "issues": "https://github.com/maikschneider/bw_captcha/issues",
+                "source": "https://github.com/maikschneider/bw_captcha/tree/v2.0.5"
+            },
+            "time": "2023-03-08T10:49:40+00:00"
+        },
         {
             "name": "doctrine/annotations",
             "version": "1.13.3",
