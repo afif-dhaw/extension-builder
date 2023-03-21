@@ -50,8 +50,27 @@ class EnterpriseRepository extends Repository
         $queryBuilder = $queryBuilder->select('*')->from($this->enterpriseName);
         if ($categories) {
             $queryBuilder->andWhere(
-            $queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%' . $query . '%')), 
-            $queryBuilder->expr()->in('category', $categories)
+                $queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%' . $query . '%')),
+                $queryBuilder->expr()->in('category', $categories)
+            );
+        } else {
+            $queryBuilder = $queryBuilder->where($queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%' . $query . '%')));
+        }
+        $queryResult = $queryBuilder->execute();
+        $results = $queryResult->fetchAll();
+        return $results;
+    }
+    public function getByQueryAndCategoriesUsingSysCategory(string $query = "", array $categories = [])
+    {
+        $this->connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable($this->enterpriseName);
+        $queryBuilder = $queryBuilder->select('*')->from($this->enterpriseName);
+        if ($categories) {
+            $queryBuilder->andWhere(
+                $queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%' . $query . '%')),
+                $queryBuilder->expr()->in('category_perms', $categories)
+
+
             );
         } else {
             $queryBuilder = $queryBuilder->where($queryBuilder->expr()->like('name', $queryBuilder->createNamedParameter('%' . $query . '%')));

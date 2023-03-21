@@ -12,3 +12,6 @@ CREATE TABLE tx_filter_domain_model_enterprise (
 CREATE TABLE tx_filter_domain_model_categoryenterprise (
 	name varchar(255) NOT NULL DEFAULT ''
 );
+CREATE TABLE tx_filter_domain_model_enterprise (
+	category_perms varchar(255) DEFAULT ''
+) ;

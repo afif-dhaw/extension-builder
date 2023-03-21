@@ -1,22 +1,26 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true"
   xmlns:vhs="http://typo3.org/ns/VHS/ViewHelpers">
 <f:layout name="Default" />
+
 <f:section name="content">
-  <div class="container-filter-extension" id="container-filter-extension">
-    <h1 class="title">Mitgliederliste</h1>
-    <h4 class="description">Mitglieder unterliegen einer strengen Kontrolle — und eine Mitgliedschaft im BDIU ist ein
-      Qualitâtssiegel für seriòses Inkasso. ln der Mitgliederliste finden Auftraggeber das für sie
-      passende Unternehmen und Verbraucher kònnen prüfen, Ob sie von einem BDIU-
-      Mitgliedsunternehmen kontaktiert wurden.</h4>
-    <f:render partial="Search/SearchAjax" arguments="{categories: categories}" />
-    <f:variable name="ajaxUri"
-      value="{f:uri.action(action: 'filterajax', controller: 'Enterprise', pageType: settings.uids.typeNumVal )}">
-    </f:variable>
-    <div class="cards">
-      <f:render partial="Enterprise/List" arguments="{enterprises:enterprises}" />
+  <section class="enterprises-list">
+    <div class="container">
+      <h1 class="title">Mitgliederliste</h1>
+      <h4 class="description">Mitglieder unterliegen einer strengen Kontrolle — und eine Mitgliedschaft im BDIU ist ein
+        Qualitâtssiegel für seriòses Inkasso. ln der Mitgliederliste finden Auftraggeber das für sie
+        passende Unternehmen und Verbraucher kònnen prüfen, Ob sie von einem BDIU-
+        Mitgliedsunternehmen kontaktiert wurden.</h4>
+      <f:render partial="Search/SearchAjax" arguments="{categories: categories}" />
+      <f:variable name="ajaxUri"
+        value="{f:uri.action(action: 'filterajax', controller: 'Enterprise', pageType: settings.uids.typeNumVal, pageUid: 29)}">
+      </f:variable>
+      <div class="cards">
+        <f:render partial="Enterprise/List" arguments="{enterprises:enterprises}" />
+      </div>
     </div>
-  </div>
-  <input type="hidden" id="url1" value="{f:uri.action(action: 'filterajax', pageType: 7485692582, absolute: 1)}">
+    <input type="hidden" id="url" value="{ajaxUri}">
+    </div>
+  </section>
 </f:section>
 
 </html>

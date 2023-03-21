@@ -9,7 +9,7 @@
             <f:for each="{categories}" as="category">
                 <div class="item">
                     <f:form.checkbox name="categories[]" value="{category.uid}" />
-                    <span class="category-title">{category.Name}</span>
+                    <span class="category-title">{category.title}</span>
                 </div>
             </f:for>
         </f:if>

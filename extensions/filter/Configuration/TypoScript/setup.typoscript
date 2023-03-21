@@ -64,6 +64,28 @@ plugin.tx_filter_listajax {
         #callDefaultActionIfActionCantBeResolved = 1
     }
 }
+plugin.tx_filter_filterajax {
+    view {
+        templateRootPaths.0 = EXT:filter/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_filter_filterajax.view.templateRootPath}
+        partialRootPaths.0 = EXT:filter/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_filter_filterajax.view.partialRootPath}
+        layoutRootPaths.0 = EXT:filter/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_filter_filterajax.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_filter_filterajax.persistence.storagePid}
+        #recursive = 1
+    }
+    features {
+        #skipDefaultArguments = 1
+        # if set to 1, the enable fields are ignored in BE context
+        ignoreAllEnableFieldsInBe = 0
+    }
+    mvc {
+        #callDefaultActionIfActionCantBeResolved = 1
+    }
+}
 
 # these classes are only used in auto-generated templates
 plugin.tx_filter._CSS_DEFAULT_STYLE (
@@ -112,7 +134,7 @@ AJAXPage {
         disableAllHeaderCode = 1
         additionalHeaders {
             10 {
-                header = Content-Type: application/json
+                header = Content-Type: html
                 replace = 1
             }
         }

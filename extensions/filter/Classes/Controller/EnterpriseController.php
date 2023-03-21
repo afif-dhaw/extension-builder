@@ -6,6 +6,8 @@ namespace Filter\Filter\Controller;
 
 use Filter\Filter\Domain\Repository\EnterpriseRepository;
 use Filter\Filter\Domain\Repository\CategoryEnterpriseRepository;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Database\ConnectionPool;
 
 /**
  * This file is part of the "filter" Extension for TYPO3 CMS.
@@ -143,8 +145,8 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function filterajaxAction(string $query = '', array $categories = [])
     {
-        $enterprise = $this->enterpriseRepository->getByQueryAndCategories($query, $categories);
-        $this->view->assign('enterprises', $enterprise);
+        $enterprises = $this->enterpriseRepository->getByQueryAndCategoriesUsingSysCategory($query, $categories);
+        $this->view->assign('enterprises', $enterprises);
         $this->view->assign('selectedCategories', $categories);
         $this->view->assign('categories', $this->categoryRepository->findAll());
     }
@@ -155,7 +157,7 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     public function injectEnterpriseRepository(\Filter\Filter\Domain\Repository\EnterpriseRepository $enterpriseRepository)
     {
         $this->enterpriseRepository = $enterpriseRepository;
-    } 
+    }
 
     /**
      * action listajax
@@ -165,8 +167,18 @@ class EnterpriseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     public function listajaxAction()
     {
         $enterprises = $this->enterpriseRepository->findAll();
-        $categories = $this->categoryRepository->findAll();
+        $categories = $this->getlistCategories();
         $this->view->assign('enterprises', $enterprises);
         $this->view->assign('categories', $categories);
+    }
+
+    public function getlistCategories()
+    {
+        $connection = GeneralUtility::makeInstance(ConnectionPool::class);
+        $queryBuilder = $connection->getQueryBuilderForTable('sys_category');
+        $queryBuilder = $queryBuilder->select('*')->from('sys_category');
+        $queryResult = $queryBuilder->execute();
+        $results = $queryResult->fetchAll();
+        return $results;
     }
 }

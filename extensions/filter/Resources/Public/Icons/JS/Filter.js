@@ -6,19 +6,25 @@ $(document).ready(function () {
       categories.push($(this).val());
     });
     $.ajax({
-      url: $('#url1').val(),
+      url: $('#url').val(),
       type: 'POST',
       dataType: 'html',
       data: {
         'tx_filter_filterajax[query]': query,
-        'tx_filter_filterajax[categories]': categories
+        'tx_filter_filterajax[categories]': categories,
       },
       success: function (data) {
-        $('#container-filter-extension').html(data);
+        $('#cards-container').empty();
+
+        const fakeData = $("<div></div>");
+        fakeData.html(data);
+        // const cards = $(data);
+
+        const cardList = $(fakeData).find('#cards-result');
+        $('#cards-container').html($(cardList));
       },
       error: function (jqXHR, textStatus, errorThrown) {
       },
     });
-    return false;
   });
 });

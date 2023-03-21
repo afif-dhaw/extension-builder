@@ -1,33 +1,38 @@
 <f:if condition="{enterprises}">
   <f:widget.paginate objects="{enterprises}" as="paginatedEnterprises"
-    configuration="{itemsPerPage: 2, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 10}">
-    <f:for each="{paginatedEnterprises}" as="enterprise">
-      <div class="card">
-        <h3 class="enterprise-name">{enterprise.name}</h3>
-        <div class="enterprise-infos">
-          <div class="enterprise-address">
-            <p>{enterprise.address}</p>
-            <span class="alltogether">
-              <p>{enterprise.codePostal}</p>
-              <p>{enterprise.ville}</p>
-            </span>
+    configuration="{itemsPerPage: 4, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 10}">
+    <div id="cards-container">
+      <div id="cards-result">
+        <f:for each="{paginatedEnterprises}" as="enterprise">
+          <div class="card">
+            <h3 class="enterprise-name">{enterprise.name}</h3>
+            <div class="enterprise-infos">
+              <div class="enterprise-address">
+                <p>{enterprise.address}</p>
+                <span class="alltogether">
+                  <p>{enterprise.codePostal}</p>
+                  <p>{enterprise.ville}</p>
+                </span>
+              </div>
+              <div class="enterprise-contact">
+                <span class="alltogether">
+                  <img class="icon" src="/assets/icons/phone.svg" alt="Phone Icon" />
+                  <p>{enterprise.phone}</p>
+                </span>
+                <span class="alltogether">
+                  <img class="icon" src="/assets/icons/envelope.svg" alt="Email Icon" />
+                  <p>{enterprise.email}</p>
+                </span>
+                <span class="alltogether">
+                  <img class="icon" src="/assets/icons/globe.svg" alt="Web Icon" />
+                  <p>{enterprise.website}</p>
+                </span>
+              </div>
+            </div>
           </div>
-          <div class="enterprise-contact">
-            <span class="alltogether">
-              <img class="icon" src="/assets/icons/phone.svg" alt="Phone Icon" />
-              <p>{enterprise.phone}</p>
-            </span>
-            <span class="alltogether">
-              <img class="icon" src="/assets/icons/envelope.svg" alt="Email Icon" />
-              <p>{enterprise.email}</p>
-            </span>
-            <span class="alltogether">
-              <img class="icon" src="/assets/icons/globe.svg" alt="Web Icon" />
-              <p>{enterprise.website}</p>
-            </span>
-          </div>
-        </div>
+        </f:for>
       </div>
-    </f:for>
+    </div>
+
   </f:widget.paginate>
 </f:if>
