@@ -1,0 +1,14 @@
+.container-vhs {
+    padding: 10px;
+    background-color: #308096;
+    width: 500px;
+    height: 400px;
+
+    .list-item-vhs {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: white;
+
+    }
+}

@@ -1,7 +1,8 @@
 <?php
 defined('TYPO3_MODE') || die();
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] = \Filter\Filter\Hook\EnterpriseHook::class;
 
-(static function() {
+(static function () {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'Filter',
         'Enterprise',

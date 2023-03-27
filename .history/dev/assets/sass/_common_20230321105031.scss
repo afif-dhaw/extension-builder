@@ -1,0 +1,18 @@
+// Set variables and reusable mixins
+@import '_global/mixins';
+@import '_global/placeholders';
+
+// project
+@import '_project/mixins';
+@import '_project/mixins-fonts';
+@import '_project/config';
+@import '_project/placeholders';
+@import '_project/mixins-mk';
+@import '_project/placeholders-layouts';
+@import '_project/placeholders-mk';
+@import '_project/contact';
+@import '_project/side-bar';
+@import '_project/download';
+@import '_project/swiper';
+@import '_project/filter';
+@import '_project/contact-form';

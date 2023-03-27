@@ -1,0 +1,39 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+  xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+  xmlns:p="Filter\Filter\ViewHelpers">
+
+<f:layout name="Default" />
+
+<f:section name="Configuration">
+  <flux:form id="enterprise" label="Enterprise Content" description="Enterprise Content">
+
+  </flux:form>
+</f:section>
+
+<f:section name="Preview">
+  <h1>Enterprise Content</h1>
+</f:section>
+
+<f:section name="Main">
+  <f:debug>{enterpriseId}</f:debug>
+  <f:variable name="entrId" value="{p:enterprise(enterpriseId: enterpriseId)}"></f:variable>
+  <ol>
+    <li>
+      <h3>Name : </h3>{enterpriseElement.name}
+    </li>
+    <li>
+      <h3>Phone Number : </h3>{enterpriseElement.phoneNumber}
+    </li>
+    <li>
+      <h3>Mail : </h3>{enterpriseElement.mail}
+    </li>
+    <li>
+      <h3>Website : </h3>{enterpriseElement.website}
+    </li>
+    <li>
+      <h3>Address : </h3>{enterpriseElement.address}
+    </li>
+  </ol>
+</f:section>
+
+</html>
