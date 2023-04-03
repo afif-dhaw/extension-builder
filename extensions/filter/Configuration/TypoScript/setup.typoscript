@@ -156,3 +156,40 @@ AJAXPage {
 # }
 
 
+
+# plugin.tx_news {
+#         persistence {
+#         classes {
+#             GeorgRinger\News\Domain\Model\News {
+#                 subclasses {
+#                     0 = Filter\Filter\Domain\Model\News
+#                 }
+#             }
+#             Filter\Filter\Domain\Model\NewsDefault {
+#                 mapping {
+#                     tableName = tx_news_domain_model_news
+#                     recordType = 0
+#                 }
+#             }
+#         }
+#     }
+
+# 	view {
+# 		templateRootPaths {
+# 			10 = {$plugin.tx_news.view.templateRootPath}
+# 		}
+
+# 		partialRootPaths {
+# 			10 = {$plugin.tx_news.view.partialRootPath}
+# 		}
+
+# 		layoutRootPaths {
+# 			10 = {$plugin.tx_news.view.layoutRootPath}
+# 		}
+# 	}
+
+    
+
+# }
+
+

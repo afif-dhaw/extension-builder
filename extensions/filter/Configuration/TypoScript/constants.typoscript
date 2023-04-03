@@ -54,3 +54,10 @@ plugin.tx_filter_filterajax {
         storagePid =
     }
 }
+plugin.tx_news {
+    view {
+        templateRootPath = EXT:filter/Resources/Private/Templates/
+        partialRootPath = EXT:filter/Resources/Private/Partials/
+        layoutRootPath = EXT:filter/Resources/Private/Layouts/
+    }
+}

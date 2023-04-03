@@ -14,4 +14,9 @@ CREATE TABLE tx_filter_domain_model_categoryenterprise (
 );
 CREATE TABLE tx_filter_domain_model_enterprise (
 	category_perms varchar(255) DEFAULT ''
-) ;
+);
+
+CREATE TABLE tx_news_domain_model_news (
+   title_text varchar(2000) NOT NULL DEFAULT '',
+   intro_text varchar(2000) NOT NULL DEFAULT '' 
+);
