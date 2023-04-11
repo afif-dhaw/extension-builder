@@ -1,6 +1,10 @@
 <?php
 defined('TYPO3_MODE') || die();
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] = \Filter\Filter\Hook\EnterpriseHook::class;
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News']['filter'] = 'filter';
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\GeorgRinger\News\Controller\NewsController::class] = [
+    'className' => \Filter\Filter\Controller\NewsTestController::class,
+];
 
 (static function () {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(

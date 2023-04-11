@@ -11,14 +11,14 @@ class News extends \GeorgRinger\News\Domain\Model\News
     /**
      * @var string
      */
-    protected $IntroText;
+    protected $introText;
 
     /**
      * @return string
      */
-    public function getIntroText()
+    public function getintroText()
     {
-        return $this->IntroText;
+        return $this->introText;
     }
     /**
      * @var string
@@ -36,9 +36,9 @@ class News extends \GeorgRinger\News\Domain\Model\News
     /**
      * @param string $IntroText
      */
-    public function setIntroText($IntroText)
+    public function setintroText($introText)
     {
-        $this->IntroText = $IntroText;
+        $this->introText = $introText;
     }
     /**
      * @param string $titleText

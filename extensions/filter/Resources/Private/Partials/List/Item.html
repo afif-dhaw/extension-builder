@@ -4,17 +4,37 @@
 	=====================
 		Partials/List/Item.html
 -->
-
 <div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}"
 	itemscope="itemscope" itemtype="https://schema.org/Article">
 	<n:excludeDisplayedNews newsItem="{newsItem}" />
 	<!-- header -->
 	<div class="header">
+		<!-- date -->
+
+		<span class="news-list-date">
+			<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+				<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+			</time>
+		</span>
 		<h3>
-			<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
-				<span itemprop="headline">{newsItem.title}</span>
-			</n:link>
+			<f:comment>
+				<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+
+				</n:link>
+			</f:comment>
+			<span itemprop="headline" class="news-title">{newsItem.title}</span>
 		</h3>
+		<div class="intro-text-news">
+			<f:format.html>{newsItem.introText}</f:format.html>
+		</div>
+		<div class="news-img">
+			<f:for each="{newsItem.falMedia}" as="img">
+				<f:image image="{img}" title="{mediaElement.originalResource.title}"
+					alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}"
+					maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}"
+					maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}" />
+			</f:for>
+		</div>
 	</div>
 
 	<f:if condition="{newsItem.mediaPreviews}">
@@ -44,20 +64,22 @@
 				</n:link>
 			</div>
 		</f:then>
-		<f:else>
-			<f:if condition="{settings.displayDummyIfNoMedia}">
-				<div class="news-img-wrap">
-					<span class="no-media-element">
-						<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
-							<f:image src="{settings.list.media.dummyImage}" title="" alt=""
-								loading="{settings.list.media.image.lazyLoading}"
-								maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}"
-								maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}" />
-						</n:link>
-					</span>
-				</div>
-			</f:if>
-		</f:else>
+		<f:comment>
+			<f:else>
+				<f:if condition="{settings.displayDummyIfNoMedia}">
+					<div class="news-img-wrap">
+						<span class="no-media-element">
+							<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+								<f:image src="{settings.list.media.dummyImage}" title="" alt=""
+									loading="{settings.list.media.image.lazyLoading}"
+									maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}"
+									maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}" />
+							</n:link>
+						</span>
+					</div>
+				</f:if>
+			</f:else>
+		</f:comment>
 	</f:if>
 
 
@@ -70,26 +92,25 @@
 						'{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
 				</f:then>
 				<f:else>
-					<div itemprop="description">{newsItem.bodytext -> f:format.crop(maxCharacters:
-						'{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
+					<f:comment>
+						<div itemprop="description">{newsItem.bodytext -> f:format.crop(maxCharacters:
+							'{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
+					</f:comment>
+					<div itemprop="description" class="intro-text-news">{newsItem.bodytext }</div>
 				</f:else>
 			</f:if>
 		</n:removeMediaTags>
-
-		<n:link newsItem="{newsItem}" settings="{settings}" class="more" title="{newsItem.title}">
-			<f:translate key="more-link" />
-		</n:link>
+		<f:comment>
+			<n:link newsItem="{newsItem}" settings="{settings}" class="more" title="{newsItem.title}">
+				<f:translate key="more-link" />
+			</n:link>
+		</f:comment>
 	</div>
 
 	<!-- footer information -->
 	<div class="footer">
 		<p>
-			<!-- date -->
-			<span class="news-list-date">
-				<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
-					<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
-				</time>
-			</span>
+
 
 			<f:if condition="{newsItem.firstCategory}">
 				<!-- first category -->

@@ -157,39 +157,49 @@ AJAXPage {
 
 
 
-# plugin.tx_news {
-#         persistence {
-#         classes {
-#             GeorgRinger\News\Domain\Model\News {
-#                 subclasses {
-#                     0 = Filter\Filter\Domain\Model\News
-#                 }
-#             }
-#             Filter\Filter\Domain\Model\NewsDefault {
-#                 mapping {
-#                     tableName = tx_news_domain_model_news
-#                     recordType = 0
-#                 }
-#             }
-#         }
-#     }
+plugin.tx_news {
+        persistence {
+        classes {
+            GeorgRinger\News\Domain\Model\News {
+                subclasses {
+                    0 = Filter\Filter\Domain\Model\News
+                }
+            }
+            Filter\Filter\Domain\Model\News {
+                mapping {
+                    tableName = tx_news_domain_model_news
+                    recordType = 0
+                }
+            }
+        }
+    }
 
-# 	view {
-# 		templateRootPaths {
-# 			10 = {$plugin.tx_news.view.templateRootPath}
-# 		}
+	view {
+		templateRootPaths {
+			10 = {$plugin.tx_news.view.templateRootPath}
+		}
 
-# 		partialRootPaths {
-# 			10 = {$plugin.tx_news.view.partialRootPath}
-# 		}
+		partialRootPaths {
+			10 = {$plugin.tx_news.view.partialRootPath}
+		}
 
-# 		layoutRootPaths {
-# 			10 = {$plugin.tx_news.view.layoutRootPath}
-# 		}
-# 	}
+		layoutRootPaths {
+			10 = {$plugin.tx_news.view.layoutRootPath}
+		}
+	}
 
     
 
-# }
+}
+plugin.tx_felogin_login {
+  view {
+    templateRootPaths {
+      20 = EXT:filter/Resources/Private/Templates/
+    }
+    partialRootPaths {
+	   20 = EXT:filter/Resources/Private/Partials/
+	}
+  }
+}
 
 

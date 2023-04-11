@@ -1,0 +1,50 @@
+.container-login {
+    display: flex;
+    flex-direction: column;
+
+
+    >.login-title {
+        height: 49px;
+        width: 145px;
+        color: #316c7c;
+        font-size: 41px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 49px;
+    }
+
+    >.description-login {
+        height: 44px;
+        width: 580px;
+        color: #313131;
+        font-size: 15px;
+        letter-spacing: 0;
+        line-height: 22px;
+        margin: 5px;
+    }
+
+    >.input-username {
+        box-sizing: border-box;
+        height: 49px;
+        width: 609px;
+        border: 1px solid #41646E;
+        border-radius: 6px;
+        background-color: #FFFFFF;
+        margin: 5px;
+    }
+
+    >.login-button {
+        height: 48px;
+        width: 200px;
+        border-radius: 8px;
+        background-color: #006982;
+        color: #fff;
+        margin-top: 15px;
+    }
+
+
+}
+
+a:-webkit-any-link {
+    margin-left: 460px;
+}

@@ -36,3 +36,6 @@ $fields = array(
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_news_domain_model_news', $fields);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', 'intro_text', '', 'after:teaser');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', 'title_text', '', 'after:intro_text');
+
+$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items']['3'] = ['News', 3];
+$GLOBALS['TCA']['tx_news_domain_model_news']['types']['3'] = ['showitem' => 'intro_text, title_text'];
