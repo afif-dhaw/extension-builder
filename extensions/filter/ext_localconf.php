@@ -2,10 +2,7 @@
 defined('TYPO3_MODE') || die();
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] = \Filter\Filter\Hook\EnterpriseHook::class;
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News']['filter'] = 'filter';
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\GeorgRinger\News\Controller\NewsController::class] = [
-    'className' => \Filter\Filter\Controller\NewsTestController::class,
-];
-
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\GeorgRinger\News\Controller\NewsController::class] = ['className' => \Filter\Filter\Controller\NewsTestController::class,];
 (static function () {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'Filter',
@@ -124,3 +121,17 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\GeorgRinger\News\Controller\NewsC
         ['source' => 'EXT:filter/Resources/Public/Icons/user_plugin_filterajax.svg']
     );
 })();
+
+
+
+
+//Xclass InlineRecordContainer
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\Evoweb\SfRegister\Domain\Model\FrontendUser::class] = [
+    'className' => \Filter\Filter\Domain\Model\FrontendUser::class,
+];
+$GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['sf_register']['extender'][\Evoweb\SfRegister\Domain\Model\FrontendUser::class]['filter'] =
+    'EXT:filter/Classes/Domain/Model/FrontendUser.php';
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
+    '@import \'EXT:filter/Configuration/TypoScript/Fields.typoscript\''
+);

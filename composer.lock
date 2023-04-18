@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "485e0dae14612497b19e3a0a011166e4",
+    "content-hash": "5618083320cd514ddff3f4c2b4a36ffa",
     "packages": [
         {
             "name": "blueways/bw-captcha",
@@ -733,6 +733,64 @@
                 "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.15.4"
             },
             "time": "2022-02-21T09:13:59+00:00"
+        },
+        {
+            "name": "evoweb/extender",
+            "version": "7.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/evoWeb/extender.git",
+                "reference": "433ef8665d0babf13acb574f03940afc3d37bc25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/evoWeb/extender/zipball/433ef8665d0babf13acb574f03940afc3d37bc25",
+                "reference": "433ef8665d0babf13acb574f03940afc3d37bc25",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "^10.4.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "extender",
+                    "web-dir": ".Build/Web"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Evoweb\\Extender\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Extending extbase domain models like a pro with extender",
+            "homepage": "http://www.evoweb.de",
+            "keywords": [
+                "TYPO3 CMS",
+                "domain models",
+                "extbase",
+                "extending"
+            ],
+            "support": {
+                "docs": "https://docs.typo3.org/p/evoweb/extender/master/en-us/",
+                "issues": "https://github.com/evoWeb/extender/issues",
+                "source": "https://github.com/evoWeb/extender/tree/7.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/garbast",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/garbast",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-11-07T11:18:37+00:00"
         },
         {
             "name": "evoweb/sf-register",

@@ -201,5 +201,41 @@ plugin.tx_felogin_login {
 	}
   }
 }
+plugin.tx_sfregister {
+  view {
+    templateRootPaths {
+      60 = EXT:filter/Resources/Private/Templates/sfRegister/
+    }
+    partialRootPaths {
+	   60 = EXT:filter/Resources/Private/Partials/sfRegister/
+	}
+    layoutRootPaths {
+	   60 = EXT:filter/Resources/Private/Layouts/sfRegister/
+	}
+  }
+}
 
+@import 'EXT:filter/Configuration/TypoScript/Fields.typoscript'
 
+plugin.tx_sfregister{
+    settings{
+        confirmEmailPostCreate = 1
+        notifyUserPostCreateSave = 1
+        notifyUserPostCreateConfirm = 1
+        sitename = test envoie email
+        userEmail {
+            fromName = AfifDhaw
+            fromEmail = afif.dhaw@softtodo.com
+            replyName = AfifDhaw
+            replyEmail = afifdhaw@gmail.com
+        }
+        notifyUser {
+            createSave = 1
+            createConfirm = 0
+            createRefuse = 0
+            createAccept = 1
+            createDecline = 0
+            resendMail = 0
+        }
+    }
+}

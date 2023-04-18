@@ -36,6 +36,18 @@
 			<trans-unit id="tx_filter_domain_model_categoryenterprise.name" resname="tx_filter_domain_model_categoryenterprise.name">
 				<source>Name</source>
 			</trans-unit>
+
+
+			<trans-unit id="fe_users.admin" resname="fe_users.admin">
+				<source>Admin</source>
+			</trans-unit>
+			<trans-unit id="fe_users.developer" resname="fe_users.developer">
+				<source>Developer</source>
+			</trans-unit>
+			<trans-unit id="fe_users.role" resname="fe_users.role">
+				<source>role</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

@@ -20,3 +20,6 @@ CREATE TABLE tx_news_domain_model_news (
    title_text varchar(2000) NOT NULL DEFAULT '',
    intro_text varchar(2000) NOT NULL DEFAULT '' 
 );
+CREATE TABLE fe_users (
+	role varchar(255) DEFAULT '',
+);

@@ -14,6 +14,7 @@
 	},
 	"require": {
 		"blueways/bw-captcha": "^2.0",
+		"evoweb/extender": "7.1.0",
 		"evoweb/sf-register": "10.1.5",
 		"filter/filter": "@dev",
 		"fluidtypo3/flux": "^9.5",

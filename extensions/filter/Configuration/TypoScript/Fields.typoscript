@@ -1,0 +1,11 @@
+plugin.tx_sfregister.settings.fields.configuration {
+   role {
+      #html file in partial
+      partial = Select 
+        values {
+         admin = LLL:EXT:filter/Resources/Private/Language/locallang.xlf:fe_users.admin
+         developper = LLL:EXT:filter/Resources/Private/Language/locallang.xlf:fe_users.developer
+        }
+      backendLabel = LLL:EXT:filter/Resources/Private/Language/locallang.xlf:fe_users.role
+   }
+}

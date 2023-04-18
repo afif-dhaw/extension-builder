@@ -1,0 +1,23 @@
+.title-sf-register {
+    height: 49px;
+    width: 145px;
+    color: #316c7c;
+    font-size: 41px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 49px;
+}
+
+.custom-sfregister {
+    box-sizing: border-box;
+    height: 49px;
+    width: 500px;
+    border: 1px solid #41646E;
+    border-radius: 6px;
+    background-color: $background-color-custom-contact;
+    margin-bottom: 15px;
+}
+
+.tx_evoweb_sfregister meter#bargraph.show {
+    display: none !important;
+}
