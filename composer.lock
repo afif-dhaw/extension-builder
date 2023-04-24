@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5618083320cd514ddff3f4c2b4a36ffa",
+    "content-hash": "c4fd78fa9ecd524768c383ce10671361",
     "packages": [
         {
             "name": "blueways/bw-captcha",
@@ -5076,6 +5076,61 @@
             "time": "2022-08-02T15:47:23+00:00"
         },
         {
+            "name": "tpwd/ke_search",
+            "version": "4.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tpwd/ke_search.git",
+                "reference": "d0ebc4020a6a97c0faf9fc719a036e834212331c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tpwd/ke_search/zipball/d0ebc4020a6a97c0faf9fc719a036e834212331c",
+                "reference": "d0ebc4020a6a97c0faf9fc719a036e834212331c",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "^9.5 || 10.2.0 - 10.4.99"
+            },
+            "replace": {
+                "teaminmedias-pluswerk/ke_search": "self.version",
+                "typo3-ter/ke_search": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "ke_search"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tpwd\\KeSearch\\": "Classes"
+                },
+                "classmap": [
+                    "Classes"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Search Extension for TYPO3, including faceting search functions.",
+            "homepage": "https://www.typo3-macher.de/en/facetted-search-ke-search/",
+            "keywords": [
+                "TYPO3 CMS",
+                "faceted search",
+                "faceting",
+                "ke_search",
+                "kesearch",
+                "search"
+            ],
+            "support": {
+                "issues": "https://github.com/tpwd/ke_search/issues",
+                "source": "https://github.com/tpwd/ke_search/tree/4.0.2"
+            },
+            "time": "2021-10-29T10:45:32+00:00"
+        },
+        {
             "name": "typo3/class-alias-loader",
             "version": "v1.1.4",
             "source": {
@@ -6271,6 +6326,64 @@
             "support": {
                 "chat": "https://typo3.org/help",
                 "docs": "https://docs.typo3.org",
+                "issues": "https://forge.typo3.org",
+                "source": "https://github.com/typo3/typo3"
+            },
+            "time": "2022-09-13T08:51:49+00:00"
+        },
+        {
+            "name": "typo3/cms-indexed-search",
+            "version": "v10.4.32",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-CMS/indexed_search.git",
+                "reference": "365099171980a2cf9e425ac14cfa989fd271df86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-CMS/indexed_search/zipball/365099171980a2cf9e425ac14cfa989fd271df86",
+                "reference": "365099171980a2cf9e425ac14cfa989fd271df86",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "10.4.32"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "suggest": {
+                "typo3/cms-scheduler": "For garbage collection of search statistics"
+            },
+            "type": "typo3-cms-framework",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "10.4.x-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "indexed_search"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\IndexedSearch\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Core Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Indexed Search Engine for TYPO3 pages, PDF-files, Word-files, HTML and text files. Provides a backend module for statistics of the indexer and a frontend plugin. Documentation can be found in the extension \"doc_indexed_search\".",
+            "homepage": "https://typo3.org",
+            "support": {
+                "chat": "https://typo3.org/help",
+                "docs": "https://docs.typo3.org/c/typo3/cms-indexed-search/10.4/en-us",
                 "issues": "https://forge.typo3.org",
                 "source": "https://github.com/typo3/typo3"
             },

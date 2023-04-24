@@ -125,11 +125,9 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\GeorgRinger\News\Controller\NewsC
 
 
 
-//Xclass InlineRecordContainer
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\Evoweb\SfRegister\Domain\Model\FrontendUser::class] = [
-    'className' => \Filter\Filter\Domain\Model\FrontendUser::class,
-];
-$GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['sf_register']['extender'][\Evoweb\SfRegister\Domain\Model\FrontendUser::class]['filter'] =
+
+$GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['sf_register']['extender']
+[\Evoweb\SfRegister\Domain\Model\FrontendUser::class]['filter'] =
     'EXT:filter/Classes/Domain/Model/FrontendUser.php';
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(

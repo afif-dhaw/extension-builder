@@ -239,3 +239,17 @@ plugin.tx_sfregister{
         }
     }
 }
+plugin.tx_kesearch_pi2 {
+    view {
+        templateRootPaths {
+            16 = EXT:filter/Resources/Private/Templates/
+        }
+        partialRootPaths {
+            16 = EXT:filter/Resources/Private/Partials/
+        }
+        layoutRootPaths {
+            16 = EXT:filter/Resources/Private/Layouts/
+        }
+    }
+    cssFile = EXT:filter/Resources/Public/Css/ke-search.css
+}
