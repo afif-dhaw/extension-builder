@@ -239,7 +239,7 @@ plugin.tx_sfregister{
         }
     }
 }
-plugin.tx_kesearch_pi2 {
+plugin.tx_kesearch_pi1 {
     view {
         templateRootPaths {
             16 = EXT:filter/Resources/Private/Templates/
@@ -251,5 +251,5 @@ plugin.tx_kesearch_pi2 {
             16 = EXT:filter/Resources/Private/Layouts/
         }
     }
-    cssFile = EXT:filter/Resources/Public/Css/ke-search.css
+    cssFile = EXT:filter/Resources/Public/Css/kesearch.css
 }
