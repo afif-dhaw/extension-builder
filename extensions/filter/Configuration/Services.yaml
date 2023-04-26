@@ -1,0 +1,13 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Filter\Filter\:
+    resource: "../Classes/*"
+
+  Filter\Filter\Command\TestScheduler:
+    tags:
+      - name: "console.command"
+        command: "myext:test"
